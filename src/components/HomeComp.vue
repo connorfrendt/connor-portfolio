@@ -38,11 +38,6 @@ export default {
 }
 
 #footer-links {
-    /* position: absolute; */
-    /* text-align: center; */
-    /* left: calc(50% - 50px); */
-    /* bottom: 0; */
-    /* background-color: red; */
     display: flex;
     justify-content: center;
 }
