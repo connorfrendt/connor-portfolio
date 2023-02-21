@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="bg-red-500">
         <HeaderComp></HeaderComp>
         <RouterView></RouterView>
     </div>
