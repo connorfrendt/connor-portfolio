@@ -9,8 +9,8 @@
         </div>
     
         <!--Mobile Header-->
-        <div>
-    
+        <div class="">
+            Mobile
         </div>
     </div>
 </template>
@@ -19,31 +19,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 /*HEADER BUTTONS*/
-#header {
-    display: flex;
-    background-color: #03034C;
+@media screen and (0px <= width <= 500px) {
+    #header {
+        background-color: red;
+    }
 }
 
-.header-btn {
-    padding: 10px;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: lightgrey;
+@media screen and (501px <= width <= 20000px) {
+    #header {
+        display: flex;
+        background-color: #03034C;
+    }
     
-}
-.header-btn:link {
-    text-decoration: none;
-}
-.header-btn:visited {
-    text-decoration: none;
-}
-.header-btn:hover {
-    background-color: #10107B;
-    transition: 0.15s ease-in-out;
-}
-.header-btn:active {
-    text-decoration: none;
+    .header-btn {
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        color: lightgrey;
+    }
+    .header-btn:link {
+        text-decoration: none;
+    }
+    .header-btn:visited {
+        text-decoration: none;
+    }
+    .header-btn:hover {
+        background-color: #10107B;
+        transition: 0.15s ease-in-out;
+    }
+    .header-btn:active {
+        text-decoration: none;
+    }
 }
 
 </style>
