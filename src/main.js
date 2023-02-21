@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHatWizard, faRobot } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import './assets/tailwind.css'
 
 library.add(faHatWizard, faRobot, faLinkedin, faGithub);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
