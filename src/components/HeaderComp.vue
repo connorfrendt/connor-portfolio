@@ -10,7 +10,7 @@
     
         <!--Mobile Header-->
         <div class="">
-            Mobile
+            Mobiletest
         </div>
     </div>
 </template>
