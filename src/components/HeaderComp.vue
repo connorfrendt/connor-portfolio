@@ -1,25 +1,26 @@
 <template>
     <div>
         <!--Header-->
-        <div id="header" class="flex bg-[#03034C] text-white sm:max-md:hidden">
-            <RouterLink to="/" class="header-btn p-[10px] hover:bg-[#10107B] ease-in duration-150">HOME</RouterLink>
-            <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-[#10107B] ease-in duration-150">RESUME</RouterLink>
-            <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-[#10107B] ease-in duration-150">PROJECTS</RouterLink>
-            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-[#10107B] ease-in duration-150">ABOUT ME</RouterLink>
+        <div id="header" class="flex bg-gray-700 text-white sm:max-md:hidden">
+            <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
+            <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">RESUME</RouterLink>
+            <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">PROJECTS</RouterLink>
+            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">ABOUT ME</RouterLink>
         </div>
     
         <!--Mobile Header-->
         <div class="md:hidden">
-            <div class="text-left inline-flex flex-col w-full">
-                <button @click="open = !open" class="p-3 bg-white w-full">
-                    MENU
-                    <font-awesome-icon icon="fa-solid fa-bars" />
+            <div class="w-full bg-gray-700 text-center relative">
+                <button @click="open = !open" class="p-3 w-full text-gray-400">
+                    <font-awesome-icon icon="fa-solid fa-bars" class="pr-[10px]" />
+                    <font-awesome-icon icon="fa-solid fa-caret-down" class="" />
                 </button>
     
-                <div v-if="open" class="bg-white border-t border-gray-300">
-                    <div class="">Link 1</div>
-                    <div class="">Link 1</div>
-                    <div class="">Link 1</div>
+                <div v-if="open" class="w-full text-white absolute bg-gray-700">
+                    <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
+                    <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
+                    <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
+                    <RouterLink to="/aboutme"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">ABOUT ME</div></RouterLink>
                 </div>
             </div>
         </div>
