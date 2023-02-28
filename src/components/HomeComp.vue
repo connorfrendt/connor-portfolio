@@ -1,7 +1,10 @@
 <template>
     <div id="home">
         <div id="home-body">
-            Home
+            <img />
+            <p id="quote">
+                "Sometimes life is like a dark tunnel.  You can't always see the light at the end of the tunnel, but if you just keep moving, you will come to a better place."
+            </p>
         </div>
 
         <div id="footer">
@@ -23,36 +26,58 @@
 
 <script>
 export default {
+    data() {
+        return {
+            technologies: [
+                {
+                    id: 1,
 
+                }
+            ]
+        }
+    }
 }
 </script>
 
 <style>
 #home {
     height: 100%;
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
 }
 
 #home-body {
     height: 100%;
+    padding: 20px;
+    color: white;
+}
+
+#quote {
+    text-align: center;
+    padding: 10px;
+}
+
+#technologies {
+    display: flex;
+
 }
 
 #footer-links {
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 .socials {
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 30px;
 }
 
 #linkedin {
-    /* border-right: 1px solid gray; */
+    border-right: 1px solid gray;
 }
 
 .social-links {
-    color: black;
+    color: lightgray;
+    padding: 0 15px;
 }
 .social-links:visited {
     text-decoration: none;
