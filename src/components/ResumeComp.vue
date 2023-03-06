@@ -17,7 +17,7 @@
         <!--Technical Skills-->
         <div class="section">
             <div class="list-bg-title"><b>TECHNICAL SKILLS</b></div>
-            <ul class="list-bg flex justify-between grid grid-cols-7 sm:max-md:grid-cols-2">
+            <ul class="list-bg flex justify-between grid grid-cols-7 sm:max-md:grid-cols-2 md:max-lg:grid-cols-2">
                 <li v-for="skill in techSkills" :key="skill.id" class="skills">
                     <div>
                         <div class="skill-title text-stone-400"><b>{{ skill.title.toUpperCase() }}</b></div>
@@ -171,7 +171,7 @@ export default {
                         },
                         {
                             id: 'mdb',
-                            skillName: 'Mongoose/MongoDB'
+                            skillName: 'Mongoose &\n MongoDB'
                         }
                     ]
                 },
@@ -286,9 +286,6 @@ export default {
     color: white;
 }
 
-.section {
-    margin: 12px 0;
-}
 .list-bg-title {
     border-radius: 5px;
     background-color: rgb(120 113 108);
@@ -336,5 +333,17 @@ export default {
 
 #edu-section {
     padding-bottom: 12px;
+}
+
+@media screen and (0px <= width <= 1000px) {
+    .section {
+        margin: 12px 0;
+    }
+}
+
+@media screen and (1001px <= width <= 5000px) {
+    .section {
+        padding: 20px;
+    }
 }
 </style>
