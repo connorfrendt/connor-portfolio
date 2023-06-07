@@ -308,7 +308,7 @@ export default {
 
 
 .desc {
-    color: rgb(156, 163, 175)
+    color: rgb(156, 163, 175);
 }
 
 .skills {

@@ -2,15 +2,13 @@
     <div id="home">
         <div id="home-body">
 
-            
-
             <div id="pic-title">
                 <div>
                     <img src="../assets/img/pfp.jpg" class="picture" />
                 </div>
                 
                 <div id="title">
-                    <div>FULL STACK</div>
+                    <div id="">FULL STACK</div>
                     <div>JAVASCRIPT DEVELOPER</div>
                 </div>
             </div>
@@ -30,8 +28,6 @@
             </div>
 
         </div>
-
-        
 
         <!--Footer-->
         <div id="footer">
@@ -62,7 +58,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
 #parallax {
     background-image: url('../assets/img/mt_hood_gorge.jpg');
@@ -73,6 +69,7 @@ export default {
     min-height: 500px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #home-body {
@@ -87,8 +84,9 @@ export default {
     color: white;
     text-align: center;
     font-size: 40px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair', serif;
     padding: 10px;
+    letter-spacing: 5px;
 }
 
 @media screen and (0px <= width <= 640px) {
@@ -100,16 +98,22 @@ export default {
     .picture {
         border-radius: 10px;
         height: 300px;
+        width: 225px;
         margin: 0 auto;
     }
 
     #quote {
-        padding: 0px;
-        margin-top: 10px;
+        padding: 5px;
+        margin: 10px;
         background-color: rgba(120, 113, 108, 0.5);
         color: white;
         border-radius: 10px 10px 10px 10px;
         text-align: center;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        height: 200px;
+
     }
 }
 
@@ -138,6 +142,7 @@ export default {
         display: block;
         margin: 0 auto;
         height: 300px;
+        width: 225px;
     }
 
     #quote {
