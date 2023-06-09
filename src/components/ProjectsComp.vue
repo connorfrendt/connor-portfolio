@@ -1,39 +1,52 @@
 <template>
     <div>
-        <div class="section">
-            <div class="section-title"><b>WEBSITES</b></div>
-            <div class="website-grid">
-    
-                <div class="proj-div">
-                    <a class="website-link" href="https://seaestacabo.com/" target="_blank">
-                        <div id="sea-esta-title-div">
-                            <img src="../assets/img/slide_sailboat_on_rocks.jpg" class="proj-img"/>
-                            <p class="proj-title">Sea Esta Cabo Website</p>
-                        </div>
-                    </a>
-                </div>
+        <div>
+            <div class="section">
+                <div class="section-title">WEBSITES</div>
+                <div class="website-grid grid sm:max-md:grid-cols-1 grid-cols-3">
         
-                <div class="proj-div">
-                    <a class="website-link" href="https://lagringacabo.com/" target="_blank">
-                        <div id="la-gringa-title-div">
-                            <img src="../assets/img/lagringa-catamaran.jpg" class="proj-img" />
-                            <p class="proj-title">La Gringa Cabo Website</p>
-                        </div>
-                    </a>
-                </div>
+                    <div class="proj-div">
+                        <a class="website-link" href="https://seaestacabo.com/" target="_blank">
+                            <div id="sea-esta-title-div">
+                                <img src="../assets/img/slide_sailboat_on_rocks.jpg" class="proj-img"/>
+                                <p class="proj-title">Sea Esta Cabo Website</p>
+                            </div>
+                        </a>
+                    </div>
+            
+                    <div class="proj-div">
+                        <a class="website-link" href="https://lagringacabo.com/" target="_blank">
+                            <div id="la-gringa-title-div">
+                                <img src="../assets/img/lagringa-catamaran.jpg" class="proj-img" />
+                                <p class="proj-title">La Gringa Cabo Website</p>
+                            </div>
+                        </a>
+                    </div>
     
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">PERSONAL PROJECTS</div>
+                <div>
+                    <div>PROJECT 1</div>
+                </div>
+                <div>
+                    <div>PROJECT 2</div>
+                </div>
+                <div>
+                    <div>PROJECT 3</div>
+                </div>
             </div>
 
         </div>
-
         
     </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>
@@ -49,13 +62,11 @@ export default {
     margin: 0 5px;
     border-radius: 5px;
     letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .website-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     text-align: center;
-    
 }
 
 .proj-div {

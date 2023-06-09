@@ -9,14 +9,14 @@
         </div>
     
         <!--Mobile Header-->
-        <div class="md:hidden">
+        <div class="md:hidden fixed top-0 w-full box-shadow z-10">
             <div class="w-full bg-gray-700 text-center relative">
-                <button @click="open = !open" class="p-3 w-full text-gray-400">
+                <button @click="open = !open" class="p-[12px] w-full text-gray-400">
                     <font-awesome-icon icon="fa-solid fa-bars" class="pr-[10px]" />
                     <font-awesome-icon icon="fa-solid fa-caret-down" class="" />
                 </button>
     
-                <div v-if="open" class="w-full text-white absolute bg-gray-700">
+                <div v-if="open" class="w-full text-white absolute bg-gray-700 box-shadow">
                     <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
                     <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
                     <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
@@ -40,5 +40,7 @@ export default {
 </script>
 
 <style>
-
+.box-shadow {
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+}
 </style>

@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <HeaderComp></HeaderComp>
+        <div id="space"></div>
         <RouterView></RouterView>
     </div>
 </template>
@@ -23,5 +24,9 @@ body {
 
 #app {
     height: 100vh;
+}
+
+#space {
+    height: 46px;
 }
 </style>
