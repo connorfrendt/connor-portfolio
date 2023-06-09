@@ -1,19 +1,29 @@
 <template>
     <div>
-        <div class="proj-div">
-            <a class="website-link" href="https://seaestacabo.com/" target="_blank">
-                <div id="sea-esta-title-div">
-                    <p class="proj-title">Sea Esta Cabo Website</p>
+        <div class="section">
+            <div class="section-title"><b>WEBSITES</b></div>
+            <div class="website-grid">
+    
+                <div class="proj-div">
+                    <a class="website-link" href="https://seaestacabo.com/" target="_blank">
+                        <div id="sea-esta-title-div">
+                            <img src="../assets/img/slide_sailboat_on_rocks.jpg" class="proj-img"/>
+                            <p class="proj-title">Sea Esta Cabo Website</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
+        
+                <div class="proj-div">
+                    <a class="website-link" href="https://lagringacabo.com/" target="_blank">
+                        <div id="la-gringa-title-div">
+                            <img src="../assets/img/lagringa-catamaran.jpg" class="proj-img" />
+                            <p class="proj-title">La Gringa Cabo Website</p>
+                        </div>
+                    </a>
+                </div>
+    
+            </div>
 
-        <div class="proj-div">
-            <a class="website-link" href="https://lagringacabo.com/" target="_blank">
-                <div id="la-gringa-title-div">
-                    <p class="proj-title">La Gringa Cabo Website</p>
-                </div>
-            </a>
         </div>
 
         
@@ -26,7 +36,28 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.section {
+    padding: 20px;
+}
+
+.section-title {
+    color: white;
+    text-align: center;
+    background-color: rgb(120 113 108);
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+}
+
+.website-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    
+}
+
 .proj-div {
     margin: 20px;
 }
@@ -34,22 +65,24 @@ export default {
 .website-link {
     display: inline-block;
 }
-#sea-esta-title-div {
-    background-image: url("../assets/img/slide_sailboat_on_rocks.jpg");
-    height: 250px;
-    width: 400px;
-    background-size: cover;
+
+#sea-esta-title-div,
+#la-gringa-title-div {
     position: relative;
     border-radius: 12px;
+    overflow: hidden;
 }
 
-#la-gringa-title-div {
-    background-image: url("../assets/img/lagringa-catamaran.jpg");
+.proj-img {
     height: 250px;
     width: 400px;
-    background-size: cover;
-    position: relative;
-    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#sea-esta-title-div:hover .proj-img,
+#la-gringa-title-div:hover .proj-img {
+    transform: scale(1.2);
 }
 
 .proj-title {
