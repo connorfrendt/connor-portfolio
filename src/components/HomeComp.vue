@@ -7,9 +7,11 @@
                     <img src="../assets/img/pfp.jpg" class="picture" />
                 </div>
                 
-                <div id="title">
-                    <div id="">FULL STACK</div>
-                    <div>JAVASCRIPT DEVELOPER</div>
+                <div id="title-bg">
+                    <div :class="{ 'title': true, 'fade-in-active': fadeInActive }">
+                        <div>FULL STACK</div>
+                        <div>JAVASCRIPT DEVELOPER</div>
+                    </div>
                 </div>
             </div>
             
@@ -51,9 +53,14 @@
 export default {
     data() {
         return {
-        
-        }
-    }
+            fadeInActive: false,
+        };
+    },
+    mounted() {
+        setTimeout(() => {
+            this.fadeInActive = true;
+        }, 250);
+    },
 }
 </script>
 
@@ -72,15 +79,9 @@ export default {
     align-items: center;
 }
 
-#home-body {
-    /* background-image: url('../assets/img/mt_hood_gorge.jpg');
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
-
-#title {
+.title {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
     color: white;
     text-align: center;
     font-size: 40px;
@@ -89,7 +90,11 @@ export default {
     letter-spacing: 5px;
 }
 
-@media screen and (0px <= width <= 640px) {
+.fade-in-active {
+    opacity: 1;
+}
+
+@media screen and (max-width: 640px) {
     #pic-title {
         padding: 20px;
         height: 100%;
@@ -117,10 +122,13 @@ export default {
     }
 }
 
-@media screen and (641px <= width <= 5000px) {
-    #title {
+@media screen and (min-width: 641px) {
+    #title-bg {
         background-color: rgba(120, 113, 108, 0.5);
         border-radius: 0px 10px 10px 0px;
+    }
+    
+    .title {
         height: 300px;
         text-align: center;
         display: flex;
@@ -158,8 +166,6 @@ export default {
         font-size: 25px;
     }
 }
-
-
 
 #footer-links {
     display: flex;
