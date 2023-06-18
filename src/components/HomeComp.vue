@@ -15,37 +15,21 @@
                 </div>
             </div>
             
-            <div id="parallax">
-                <div id="quote">
-                    "Sometimes life is like a dark tunnel.
-                    <!-- <br /> -->
-                    You can't always see the light
-                    <!-- <br /> -->
-                    at the end of the tunnel,
-                    <!-- <br /> -->
-                    but if you just keep moving,
-                    <!-- <br /> -->
-                    you will come to a better place."
-                </div>
+            <div id="parallax"></div>
+            <!-- <div id="quote">
+                "Sometimes life is like a dark tunnel.
+                You can't always see the light
+                at the end of the tunnel,
+                but if you just keep moving,
+                you will come to a better place."
+            </div> -->
+
+            <div id="quote">
+                <i>"There are 10 types of people in the world - those that understand binary, and those that don't."</i>
             </div>
 
         </div>
 
-        <!--Footer-->
-        <div id="footer">
-            <div id="footer-links">
-                <div id="linkedin" class="socials">
-                    <a class="social-links" href="https://www.linkedin.com/in/connorfrendt" target="_blank">
-                        <font-awesome-icon icon="fa-brands fa-linkedin" />
-                    </a>
-                </div>
-                <div id="github" class="socials">
-                    <a class="social-links" href="https://www.github.com/connorfrendt" target="_blank">
-                        <font-awesome-icon icon="fa-brands fa-github" />
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -68,7 +52,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
 #parallax {
-    background-image: url('../assets/img/mt_hood_gorge.jpg');
+    background-image: url('../assets/img/spacetime1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -102,8 +86,8 @@ export default {
 
     .picture {
         border-radius: 10px;
-        height: 300px;
-        width: 225px;
+        height: 225px;
+        width: 168.75px;
         margin: 0 auto;
     }
 
@@ -118,7 +102,6 @@ export default {
         display: flex;
         align-items: center;
         height: 200px;
-
     }
 }
 
@@ -154,27 +137,16 @@ export default {
     }
 
     #quote {
-        background-color: rgba(120, 113, 108, 0.5);
-        border-radius: 10px;
-        height: 300px;
+        height: 100px;
         text-align: center;
         display: flex;
         align-items: center;
-        padding: 10px;
-        margin: 100px;
+        justify-content: center;
+        /* padding: 1px;
+        margin: 200px; */
         color: white;
         font-size: 25px;
     }
-}
-
-#footer-links {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.socials {
-    font-size: 30px;
 }
 
 #linkedin {

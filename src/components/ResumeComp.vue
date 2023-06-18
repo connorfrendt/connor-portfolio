@@ -7,7 +7,7 @@
             <ul id="exp" class="list-bg">
                 <li v-for="job in experience" :key="job.id" class="exp-and-schools-element">
                     <div class="text-[25px]"><b>{{ job.title }}</b></div>
-                    <div><i>{{ job.company }}</i> | <i>{{ job.type }}</i></div>
+                    <div><i>{{ job.company }}</i> - <i>{{ job.type }}</i></div>
                     <div>{{ job.duration }} | {{ job.place }}</div>
                     <div class="desc">{{ job.description }}</div>
                 </li>
@@ -50,6 +50,15 @@ export default {
         return {
             experience: [
                 {
+                    id: 5,
+                    title: 'Frontend Developer',
+                    type: 'Full Time',
+                    company: 'Bridgesense',
+                    place: 'Fully Remote',
+                    duration: 'December 2022 - February 2023',
+                    description: 'Built websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, & Peek API.'
+                },
+                {
                     id: 4,
                     title: 'Software Developer II',
                     type: 'Full Time',
@@ -70,8 +79,8 @@ export default {
                 {
                     id: 2,
                     title: 'Database/Software Developer',
-                    type: 'Full Time'
-,                   company: 'Pollinate',
+                    type: 'Full Time',
+                    company: 'Pollinate',
                     place: 'Portland, OR',
                     duration: 'December 2019 - August 2020',
                     description: 'As a Database Developer, I was transitioning to a Software Engineer within the company.  I assisted with software development projects for clients (e.g. Carhartt, Life is Good), as well as maintained their databases.  I was responsible for making data that\'s human readable to get output to the front-end. I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.'
