@@ -15,19 +15,26 @@
                 </div>
             </div>
             
-            <div id="parallax"></div>
-            <!-- <div id="quote">
-                "Sometimes life is like a dark tunnel.
-                You can't always see the light
-                at the end of the tunnel,
-                but if you just keep moving,
-                you will come to a better place."
-            </div> -->
+            <div id="parallax-one"></div>
 
             <div id="quote">
-                <i>"There are 10 types of people in the world - those that understand binary, and those that don't."</i>
+                <i>
+                    "There are 10 types of people in the world -
+                    <br />
+                    those that understand binary, and those that don't."</i>
             </div>
 
+            <div id="parallax-two"></div>
+            <div id="quote">
+                <i>
+                    "There are 10 types of people in the world -
+                    <br />
+                    those that understand binary, and those that don't."</i>
+            </div>
+
+            <div id="parallax-two"></div>
+
+            
         </div>
 
     </div>
@@ -51,16 +58,22 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
-#parallax {
+#parallax-one {
     background-image: url('../assets/img/spacetime1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 700px;
+}
+
+#parallax-two {
+    background-image: url('../assets/img/mt_hood_gorge.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 700px;
 }
 
 .title {
@@ -92,11 +105,8 @@ export default {
     }
 
     #quote {
-        padding: 5px;
-        margin: 10px;
-        background-color: rgba(120, 113, 108, 0.5);
+        padding: 10px;
         color: white;
-        border-radius: 10px 10px 10px 10px;
         text-align: center;
         font-size: 25px;
         display: flex;
@@ -118,6 +128,7 @@ export default {
         justify-content: center;
         flex-direction: column;
         justify-content: space-evenly;
+        padding: 0 100px;
     }
 
     #pic-title {
@@ -142,8 +153,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        /* padding: 1px;
-        margin: 200px; */
         color: white;
         font-size: 25px;
     }
@@ -157,10 +166,8 @@ export default {
     color: lightgray;
     padding: 0 15px;
 }
-.social-links:visited {
-    text-decoration: none;
-}
 
+.social-links:visited,
 .social-links:active {
     text-decoration: none;
 }
