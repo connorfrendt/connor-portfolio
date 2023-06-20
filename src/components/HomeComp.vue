@@ -8,7 +8,9 @@
                 </div>
                 
                 <div id="title-bg">
-                    <div :class="{ 'title': true, 'fade-in-active': fadeInActive }">
+                    <div id="name"><b>CONNOR FRENDT</b></div>
+                    <!-- <div :class="{ 'title': true, 'fade-in-active': fadeInActive }"> -->
+                    <div class="title">
                         <div>FULL STACK</div>
                         <div>JAVASCRIPT DEVELOPER</div>
                     </div>
@@ -24,15 +26,6 @@
                     those that understand binary, and those that don't."</i>
             </div>
 
-            <div id="parallax-two"></div>
-            <div id="quote">
-                <i>
-                    "There are 10 types of people in the world -
-                    <br />
-                    those that understand binary, and those that don't."</i>
-            </div>
-
-            <div id="parallax-two"></div>
 
             
         </div>
@@ -77,13 +70,13 @@ export default {
 }
 
 .title {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
+    /* opacity: 0;
+    transition: opacity 0.5s ease-in; */
     color: white;
     text-align: center;
     font-size: 40px;
     font-family: 'Playfair', serif;
-    padding: 10px;
+    padding: 5px;
     letter-spacing: 5px;
 }
 
@@ -119,17 +112,24 @@ export default {
     #title-bg {
         background-color: rgba(120, 113, 108, 0.5);
         border-radius: 0px 10px 10px 0px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
     }
     
-    .title {
-        height: 300px;
+    #name {
+        font-size: 60px;
+        color: white;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: space-evenly;
-        padding: 0 100px;
     }
+
+    .title {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 
     #pic-title {
         display: flex;
