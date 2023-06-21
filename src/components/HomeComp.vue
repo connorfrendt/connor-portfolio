@@ -115,6 +115,7 @@ export default {
         height: 300px;
         display: flex;
         flex-direction: column;
+        padding: 0 100px;
     }
     
     #name {
