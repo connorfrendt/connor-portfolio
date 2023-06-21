@@ -52,7 +52,7 @@ export default {
                 {
                     id: 5,
                     title: 'Frontend Developer',
-                    type: 'Full Time',
+                    type: 'Part Time',
                     company: 'Bridgesense',
                     place: 'Fully Remote',
                     duration: 'December 2022 - February 2023',

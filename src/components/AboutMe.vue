@@ -20,7 +20,7 @@
             Fast forward to college, and I quickly learned that...physics is hard, and is not something that comes to me easily.
             Funny, how math can sometimes seem like a breeze, but as soon as you apply it?  Out the window.  Ha!  Brains are funny, yeah?
             After switching majors a couple times, I thought to myself, "What do I really love?", and just like a boomerang, my love for math came right back to me, and I decided I to major in that.  After graduating with a B.S. in Mathematics, I thought - what now?  I love teaching, but I don't want to be a teacher because they are so overworked and underpaid.  I eventually found some coding bootcamps who teach you, from scratch, to be a software engineer.  And I loved every second.
-            Creating virtually anything from almost nothing was so captivating for me. Now here I am, a software engineer, and I couldn't be more happy.
+            Creating virtually anything from almost nothing was so captivating for me. Now here I am, a software engineer, and I couldn't be happier.
         </div>
     </div>
 </template>
