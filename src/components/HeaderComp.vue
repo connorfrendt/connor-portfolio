@@ -5,15 +5,16 @@
             <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
             <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">RESUME</RouterLink>
             <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">PROJECTS</RouterLink>
-            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">ABOUT ME</RouterLink>
-            <RouterLink to="/contactme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">CONTACT ME</RouterLink>
             
             <div class="flex items-center ml-auto">
+                <RouterLink to="/contactme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">Contact Me</RouterLink>
+
                 <div id="linkedin" class="socials hover:bg-[#0077b5] ease-in duration-150">
                     <a class="social-links" href="https://www.linkedin.com/in/connorfrendt" target="_blank">
                         <font-awesome-icon icon="fa-brands fa-linkedin" />
                     </a>
                 </div>
+
                 <div id="github" class="socials hover:bg-black ease-in duration-150">
                     <a class="social-links" href="https://www.github.com/connorfrendt" target="_blank">
                         <font-awesome-icon icon="fa-brands fa-github" />
@@ -34,7 +35,6 @@
                     <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
                     <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
                     <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
-                    <RouterLink to="/aboutme"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">ABOUT ME</div></RouterLink>
                     <RouterLink to="/contactme"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">CONTACT ME</div></RouterLink>
                     
                     <div class="flex justify-center">
