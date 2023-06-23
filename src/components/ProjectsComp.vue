@@ -2,7 +2,11 @@
     <div>
         <div>
             <div class="section">
-                <div class="section-title">WEBSITES</div>
+
+                <div class="title-wrapper">
+                    <div class="section-title">WEBSITES</div>
+                </div>
+
                 <div class="website-grid grid sm:max-md:grid-cols-1 grid-cols-3">
         
                     <div class="proj-div">
@@ -28,7 +32,9 @@
             </div>
 
             <div class="section">
-                <div class="section-title">PERSONAL PROJECTS</div>
+                <div class="title-wrapper">
+                    <div class="section-title">PERSONAL PROJECTS</div>
+                </div>
                 <div>
                     <div>PROJECT 1</div>
                 </div>
@@ -55,6 +61,11 @@ export default {}
     padding: 20px;
 }
 
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .section-title {
     color: white;
     text-align: center;
@@ -64,6 +75,7 @@ export default {}
     border-radius: 5px;
     letter-spacing: 2px;
     font-weight: bold;
+    width: 500px;
 }
 
 .website-grid {

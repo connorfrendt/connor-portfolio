@@ -9,7 +9,6 @@
                 
                 <div id="title-bg">
                     <div id="name"><b>CONNOR FRENDT</b></div>
-                    <!-- <div :class="{ 'title': true, 'fade-in-active': fadeInActive }"> -->
                     <div class="title">
                         <div>FULL STACK</div>
                         <div>JAVASCRIPT DEVELOPER</div>
@@ -35,16 +34,7 @@
 
 <script>
 export default {
-    data() {
-        return {
-            fadeInActive: false,
-        };
-    },
-    mounted() {
-        setTimeout(() => {
-            this.fadeInActive = true;
-        }, 250);
-    },
+    
 }
 </script>
 
@@ -70,8 +60,6 @@ export default {
 }
 
 .title {
-    /* opacity: 0;
-    transition: opacity 0.5s ease-in; */
     color: white;
     text-align: center;
     font-size: 40px;
@@ -88,6 +76,15 @@ export default {
     #pic-title {
         padding: 20px;
         height: 100%;
+    }
+
+    #name {
+        color: white;
+        font-size: 40px;
+    }
+
+    .title {
+        font-size: 35px;
     }
 
     .picture {
