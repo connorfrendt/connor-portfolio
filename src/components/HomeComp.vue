@@ -103,6 +103,7 @@ export default {
 #about-me {
     padding: 10px;
     font-size: 20px;
+    /* text-align: center; */
 }
 
 @media screen and (max-width: 640px) {
@@ -114,10 +115,11 @@ export default {
     #name {
         color: white;
         font-size: 40px;
+        text-align: center;
     }
 
     .title {
-        font-size: 35px;
+        font-size: 32px;
     }
 
     .picture {

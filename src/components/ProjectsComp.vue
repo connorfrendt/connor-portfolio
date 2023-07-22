@@ -36,7 +36,7 @@
                     <div class="section-title">PERSONAL PROJECTS</div>
                 </div>
                 <div>
-                    <div>PROJECT 1</div>
+                    <div class="text-white"><a href="https://connorfrendt.github.io/return-of-pokedex/" target="_blank">POKEDEX</a></div>
                 </div>
                 <div>
                     <div>PROJECT 2</div>
@@ -75,7 +75,7 @@ export default {}
     border-radius: 5px;
     letter-spacing: 2px;
     font-weight: bold;
-    width: 500px;
+    width: 100%;
 }
 
 .website-grid {
