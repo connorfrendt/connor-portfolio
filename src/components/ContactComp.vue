@@ -10,7 +10,6 @@
         <div class="email-icons">
             <div class="icon-and-link">
                 <font-awesome-icon icon="fa-solid fa-envelope" class="icons" />
-                <!-- <div @click="copyToClipboard" v-clipboard:copy="copiedText">connorfrendt@gmail.com</div> -->
                 <div>connorfrendt@gmail.com</div>
             </div>
 

@@ -32,18 +32,33 @@
             </div>
 
             <div class="section">
+
                 <div class="title-wrapper">
                     <div class="section-title">PERSONAL PROJECTS</div>
                 </div>
-                <div>
-                    <div class="text-white"><a href="https://connorfrendt.github.io/return-of-pokedex/" target="_blank">POKEDEX</a></div>
+
+                <div class="website-grid grid sm:max-md:grid-cols-1 grid-cols-3">
+                    <div>
+                        <div class="proj-div">
+                            <a class="website-link" href="https://return-of-pokedex.netlify.app/" target="_blank">
+                                <div id="pokemon-title-div">
+                                    <img src="../assets/img/Pokemon-Logo.png" class="proj-img" />
+                                    <p class="proj-title">Pokedex</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>PROJECT 2</div>
+                    </div>
+
+                    <div>
+                        <div>PROJECT 3</div>
+                    </div>
+
                 </div>
-                <div>
-                    <div>PROJECT 2</div>
-                </div>
-                <div>
-                    <div>PROJECT 3</div>
-                </div>
+
             </div>
 
             
@@ -91,7 +106,8 @@ export default {}
 }
 
 #sea-esta-title-div,
-#la-gringa-title-div {
+#la-gringa-title-div,
+#pokemon-title-div {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -105,7 +121,8 @@ export default {}
 }
 
 #sea-esta-title-div:hover .proj-img,
-#la-gringa-title-div:hover .proj-img {
+#la-gringa-title-div:hover .proj-img,
+#pokemon-title-div:hover .proj-img {
     transform: scale(1.2);
 }
 
