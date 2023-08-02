@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--Header-->
-        <div class="flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
+        <div class="box-shadow flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
             <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
             <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">RESUME</RouterLink>
             <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">PROJECTS</RouterLink>

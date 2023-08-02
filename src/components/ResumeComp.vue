@@ -290,7 +290,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #resume {
     color: white;
 }

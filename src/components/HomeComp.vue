@@ -109,7 +109,7 @@ export default {
 @media screen and (max-width: 640px) {
     #pic-title {
         padding: 20px;
-        height: 100%;
+        height: 100vh;
     }
 
     #name {
@@ -123,7 +123,7 @@ export default {
     }
 
     .picture {
-        border-radius: 10px;
+        border-radius: 5px;
         height: 225px;
         width: 168.75px;
         margin: 0 auto;
@@ -183,11 +183,11 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 20px;
-        height: 100%;
+        height: 100vh;
     }
 
     .picture {
-        border-radius: 10px 0px 0px 10px; /* tl tr br bl (clockwise) */
+        border-radius: 5px 0px 0px 5px; /* tl tr br bl (clockwise) */
         display: block;
         margin: 0 auto;
         height: 300px;
