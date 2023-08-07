@@ -2,24 +2,24 @@
     <div>
         <div>
 
-            <div class="section">
+            <ul>
 
-                <div class="section-title">
-                    WEBSITES
-                </div>
-
+                <li v-for="myWork in myWorks" :key="id" class="section-title">
+                    {{ myWork.sectionTitle }}
+                </li>
+    
                 <div>
-
+    
                     <ul class="website-grid">
-                        <li v-for="website in websites" :key="website.id" class="proj-div">
-
+                        <li v-for="site in websites" :key="website.id" class="proj-div">
+    
                             <div class="proj-container">
                                 <a class="" :href="website.link" target="_blank">
                                     <div class="img-container">
                                         <img :src="website.img" class="proj-img" />
                                     </div>
                                 </a>
-
+    
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
                                         <div class="proj-title" :href="website.link">
@@ -29,7 +29,7 @@
                                         <div class="proj-desc">
                                             {{ website.description }}
                                         </div>
-
+    
                                     </div>
                                     
                                     <div class="proj-desc-tech">
@@ -42,16 +42,18 @@
                                     </div>
                                 </div>
                             </div>
-
+    
                         </li>
                     </ul>
         
                 </div>
+            </ul>
+
 
             </div>
 
 
-            <div class="section">
+            <!-- <div class="section">
 
                 <div class="section-title">
                     PERSONAL PROJECTS
@@ -98,7 +100,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
 
             
         </div>
@@ -114,32 +116,42 @@ import pokeLogo from "@/assets/img/Pokemon-Logo-resize.jpg";
 export default {
     data() {
         return {
-            websites: [
+            myWorks: [
                 {
                     id: 1,
-                    img: seaEstaImage,
-                    title: 'Sea Esta Cabo',
-                    link: "https://seaestacabo.com/",
-                    description: 'A luxury, private catamaran touring website, letting people book tours.',
-                    tech: 'HTML, CSS, PeekAPI, etc.//////'
+                    sectionTitle: 'WEBSITES',
+                    websites: [
+                        {
+                            id: 'sea-esta',
+                            img: seaEstaImage,
+                            title: 'Sea Esta Cabo',
+                            link: "https://seaestacabo.com/",
+                            description: 'A luxury, private catamaran touring website, letting people book tours.',
+                            tech: 'HTML, CSS, PeekAPI, etc.//////'
+                        },
+                        {
+                            id: 'la-gringa',
+                            img: laGringaImage,
+                            title: 'La Gringa Cabo',
+                            link: "https://lagringacabo.com/",
+                            description: 'A powered catamaran tour, with whale watching, snorkeling, and sunset tours.',
+                            tech: 'HTML, Tailwind CSS, PeekAPI, etc.//////'
+                        }
+                    ]
                 },
                 {
                     id: 2,
-                    img: laGringaImage,
-                    title: 'La Gringa Cabo',
-                    link: "https://lagringacabo.com/",
-                    description: 'A powered catamaran tour, with whale watching, snorkeling, and sunset tours.',
-                    tech: 'HTML, Tailwind CSS, PeekAPI, etc.//////'
-                }
-            ],
-            projects: [
-                {
-                    id: 1,
-                    img: pokeLogo,
-                    title: 'Pokedex',
-                    link: "https://return-of-pokedex.netlify.app",
-                    description: 'A front-end Pokedex application with a psuedo-API with a filter to search for any Pokemon that fits within the given criteria.',
-                    tech: 'HTML, CSS, VueJS'
+                    sectionTitle: 'PROJECTS',
+                    projects: [
+                        {
+                            id: 'pokedex',
+                            img: pokeLogo,
+                            title: 'Pokedex',
+                            link: "https://return-of-pokedex.netlify.app",
+                            description: 'A front-end Pokedex application with a psuedo-API with a filter to search for any Pokemon that fits within the given criteria.',
+                            tech: 'HTML, CSS, VueJS'
+                        }
+                    ]
                 }
             ]
         }
