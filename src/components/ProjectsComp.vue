@@ -20,7 +20,11 @@
                                     </div>
                                     <div class="proj-desc-tech">
                                         <div class="tech-title">Technologies Used:</div>
-                                        <div class="tech-used">{{ website.tech }}</div>
+                                        <ul>
+                                            <li v-for="language in website.tech" :key="language.id" class="tech-used">
+                                                {{ language.name }}
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +82,20 @@ export default {
                     title: 'Sea Esta Cabo',
                     link: "https://seaestacabo.com/",
                     description: 'A luxury, private catamaran touring website, letting people book tours.',
-                    tech: 'HTML, CSS, PeekAPI, etc.//////'
+                    tech: [
+                        {
+                            id: 'html',
+                            name: 'HTML5'
+                        },
+                        {
+                            id: 'css',
+                            name: 'TailwindCSS'
+                        },
+                        {
+                            id: 'peek',
+                            name: 'Peek API'
+                        }
+                    ]
                 },
                 {
                     id: 2,
@@ -86,7 +103,20 @@ export default {
                     title: 'La Gringa Cabo',
                     link: "https://lagringacabo.com/",
                     description: 'A powered catamaran tour, with whale watching, snorkeling, and sunset tours.',
-                    tech: 'HTML, Tailwind CSS, PeekAPI, etc.//////'
+                    tech: [
+                        {
+                            id: 'html',
+                            name: 'HTML5'
+                        },
+                        {
+                            id: 'css',
+                            name: 'TailwindCSS'
+                        },
+                        {
+                            id: 'peek',
+                            name: 'Peek API'
+                        }
+                    ]
                 }
             ],
             projects: [
