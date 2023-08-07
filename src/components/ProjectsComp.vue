@@ -4,9 +4,9 @@
 
             <div class="section">
 
-                    <div class="section-title">
-                        WEBSITES
-                    </div>
+                <div class="section-title">
+                    WEBSITES
+                </div>
 
                 <div>
 
@@ -53,9 +53,9 @@
 
             <div class="section">
 
-                    <div class="section-title">
-                        PERSONAL PROJECTS
-                    </div>
+                <div class="section-title">
+                    PERSONAL PROJECTS
+                </div>
 
                 <div>
 
@@ -184,7 +184,7 @@ export default {
 .proj-text {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 300px ;
+    grid-template-columns: 1fr 300px;
 }
 
 .proj-title {
