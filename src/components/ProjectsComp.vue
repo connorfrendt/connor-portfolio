@@ -21,7 +21,7 @@
                                 </a>
 
                                 <div class="proj-text">
-                                    <div class="">
+                                    <div class="proj-desc-tech">
                                         <div class="proj-title" :href="website.link">
                                             {{ website.title }}
                                         </div>
@@ -32,8 +32,10 @@
 
                                     </div>
                                     
-                                    <div class="">
-                                        <div class="tech-title">Technologies Used:</div>
+                                    <div class="proj-desc-tech">
+                                        <div class="tech-title">
+                                            Technologies Used:
+                                        </div>
                                         <div class="tech-used">
                                             {{ website.tech }}
                                         </div>
@@ -67,7 +69,7 @@
                                 </a>
 
                                 <div class="proj-text">
-                                    <div>
+                                    <div class="proj-desc-tech">
                                         <a :href="project.link" target="_blank">
                                             <div class="proj-title">
                                                 {{ project.title }}
@@ -79,8 +81,10 @@
                                         </div>
                                     </div>
                                     
-                                    <div>
-                                        <div class="tech-title">Technologies Used:</div>
+                                    <div class="proj-desc-tech">
+                                        <div class="tech-title">
+                                            Technologies Used:
+                                        </div>
                                         <div class="tech-used">
                                             {{ project.tech }}
                                         </div>
@@ -134,8 +138,8 @@ export default {
                     img: pokeLogo,
                     title: 'Pokedex',
                     link: "https://return-of-pokedex.netlify.app",
-                    description: 'A front-end Pokedex application with a filter to search for any Pokemon that fits within the given criteria.',
-                    tech: 'VueJS, JavaScript'
+                    description: 'A front-end Pokedex application with a psuedo-API with a filter to search for any Pokemon that fits within the given criteria.',
+                    tech: 'HTML, CSS, VueJS'
                 }
             ]
         }
@@ -177,18 +181,24 @@ export default {
     border-radius: 5px;
 }
 
+.proj-text {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 300px ;
+}
+
 .proj-title {
     color: rgb(120 113 108);
     font-weight: bold;
-    font-size: 25px;
+    font-size: 50px;
 }
 
-.proj-text {
-    background-color: rgb(55, 65, 81);
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.proj-desc {
+    color: white;
+    min-height: 48px;
 }
+
+
 
 .img-container {
     overflow: hidden;
@@ -198,24 +208,27 @@ export default {
 .proj-img {
     object-fit: cover;
     transition: transform 0.25s ease;
-    height: 400px;
+    height: 300px;
 }
 
 .proj-img:hover {
     transform: scale(1.2);
 }
 
-.tech-title {
-    color: white;
+.proj-desc-tech {
+    background-color: rgb(55, 65, 81);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
-.proj-desc {
+.tech-title {
     color: rgb(168 162 158);
-    min-height: 48px;
 }
+
 
 .tech-used {
-    color: rgb(168 162 158);
+    color: white;
 }
 
 @media screen and (max-width: 1250px) {
