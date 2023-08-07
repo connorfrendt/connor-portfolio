@@ -1,64 +1,38 @@
 <template>
     <div>
         <div>
-
+            <!-- Websites-->
             <div class="section">
-
-                <div class="section-title">
-                    WEBSITES
-                </div>
-
+                <div class="section-title">WEBSITES</div>
                 <div>
-
                     <ul class="website-grid">
                         <li v-for="website in websites" :key="website.id" class="proj-div">
-
                             <div class="proj-container">
                                 <a class="" :href="website.link" target="_blank">
                                     <div class="img-container">
                                         <img :src="website.img" class="proj-img" />
                                     </div>
                                 </a>
-
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
-                                        <div class="proj-title" :href="website.link">
-                                            {{ website.title }}
-                                        </div>
-        
-                                        <div class="proj-desc">
-                                            {{ website.description }}
-                                        </div>
-
+                                        <div class="proj-title" :href="website.link">{{ website.title }}</div>
+                                        <div class="proj-desc">{{ website.description }}</div>
                                     </div>
-                                    
                                     <div class="proj-desc-tech">
-                                        <div class="tech-title">
-                                            Technologies Used:
-                                        </div>
-                                        <div class="tech-used">
-                                            {{ website.tech }}
-                                        </div>
+                                        <div class="tech-title">Technologies Used:</div>
+                                        <div class="tech-used">{{ website.tech }}</div>
                                     </div>
                                 </div>
                             </div>
-
                         </li>
                     </ul>
-        
                 </div>
-
             </div>
 
-
+            <!--Projects-->
             <div class="section">
-
-                <div class="section-title">
-                    PERSONAL PROJECTS
-                </div>
-
+                <div class="section-title">PERSONAL PROJECTS</div>
                 <div>
-
                     <ul class="website-grid">
                         <li v-for="project in projects" :key="project.id" class="proj-div">
                             <div class="proj-container">
@@ -67,42 +41,25 @@
                                         <img :src="project.img" class="proj-img" />
                                     </div>
                                 </a>
-
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
                                         <a :href="project.link" target="_blank">
-                                            <div class="proj-title">
-                                                {{ project.title }}
-                                            </div>
-
+                                            <div class="proj-title">{{ project.title }}</div>
                                         </a>
-                                        <div class="proj-desc">
-                                            {{ project.description }}
-                                        </div>
+                                        <div class="proj-desc">{{ project.description }}</div>
                                     </div>
-                                    
                                     <div class="proj-desc-tech">
-                                        <div class="tech-title">
-                                            Technologies Used:
-                                        </div>
-                                        <div class="tech-used">
-                                            {{ project.tech }}
-                                        </div>
+                                        <div class="tech-title">Technologies Used:</div>
+                                        <div class="tech-used">{{ project.tech }}</div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </li>
                     </ul>
-
                 </div>
-
             </div>
 
-            
         </div>
-        
     </div>
 </template>
 
