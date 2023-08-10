@@ -141,7 +141,7 @@ export default {
                         },
                         {
                             id: 'api',
-                            name: 'Simulated APIs'
+                            name: 'Simulated API'
                         }
                     ]
                 }
