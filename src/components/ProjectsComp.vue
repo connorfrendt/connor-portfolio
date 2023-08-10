@@ -54,7 +54,11 @@
                                     </div>
                                     <div class="proj-desc-tech">
                                         <div class="tech-title">Technologies Used:</div>
-                                        <div class="tech-used">{{ project.tech }}</div>
+                                        <ul>
+                                            <li v-for="language in project.tech" :key="language.id" class="tech-used">
+                                                {{ language.name }}
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +89,7 @@ export default {
                     tech: [
                         {
                             id: 'html',
-                            name: 'HTML5'
+                            name: 'HTML'
                         },
                         {
                             id: 'css',
@@ -106,7 +110,7 @@ export default {
                     tech: [
                         {
                             id: 'html',
-                            name: 'HTML5'
+                            name: 'HTML'
                         },
                         {
                             id: 'css',
@@ -126,7 +130,20 @@ export default {
                     title: 'Pokedex',
                     link: "https://return-of-pokedex.netlify.app",
                     description: 'A front-end Pokedex application with a psuedo-API with a filter to search for any Pokemon that fits within the given criteria.',
-                    tech: 'HTML, CSS, VueJS'
+                    tech: [
+                        {
+                            id: 'html',
+                            name: 'HTML'
+                        },
+                        {
+                            id: 'css',
+                            name: 'CSS'
+                        },
+                        {
+                            id: 'api',
+                            name: 'Simulated APIs'
+                        }
+                    ]
                 }
             ]
         }
