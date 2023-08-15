@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div id="wrapper">
             <!-- Websites-->
             <div class="section">
                 <div class="section-title">WEBSITES</div>
@@ -18,7 +18,7 @@
                                         <div class="proj-title" :href="website.link">{{ website.title }}</div>
                                         <div class="proj-desc">{{ website.description }}</div>
                                     </div>
-                                    <div class="proj-desc-tech">
+                                    <div class="proj-desc-tech tech-used-div">
                                         <div class="tech-title">TECHNOLOGIES USED:</div>
                                         <ul>
                                             <li v-for="language in website.tech" :key="language.id" class="tech-used">
@@ -46,13 +46,13 @@
                                     </div>
                                 </a>
                                 <div class="proj-text">
-                                    <div class="proj-desc-tech" id="techs">
+                                    <div class="proj-desc-tech">
                                         <a :href="project.link" target="_blank">
                                             <div class="proj-title">{{ project.title }}</div>
                                         </a>
                                         <div class="proj-desc">{{ project.description }}</div>
                                     </div>
-                                    <div class="proj-desc-tech">
+                                    <div class="proj-desc-tech tech-used-div">
                                         <div class="tech-title">TECHNOLOGIES USED:</div>
                                         <ul>
                                             <li v-for="language in project.tech" :key="language.id" class="tech-used">
@@ -153,6 +153,9 @@ export default {
 </script>
 
 <style scoped>
+#wrapper {
+    width: 100%;
+}
 
 .section {
     padding: 10px;
@@ -180,7 +183,6 @@ export default {
 
 .proj-container {
     display: grid;
-    /* width: 100%; */
     grid-template-columns: 1fr 4fr;
     border-radius: 5px;
 }
@@ -204,7 +206,7 @@ export default {
 
 .img-container {
     overflow: hidden;
-    min-width: 400px;
+    /* min-width: 400px; */
 }
 
 .proj-img {
@@ -219,10 +221,7 @@ export default {
 
 .proj-desc-tech {
     background-color: rgb(55, 65, 81);
-    /* width: 100%; */
-    /* height: 100%; */
     padding: 20px;
-    border-radius: 10px;
 }
 
 .tech-title {
@@ -232,19 +231,46 @@ export default {
 }
 
 
+
 .tech-used {
     color: white;
     padding: 10px;
 }
 
-@media screen and (max-width: 1250px) {
-    
+@media screen and (min-width: 1071px) {
+    .img-container {
+        min-width: 400px;
+    }
+    .tech-used-div {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section {
+        max-width: 502px;
+    }
+    .proj-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .proj-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .tech-used-div {
+        margin-top: 5px;
+    }
+
 }
 
 @media screen and (max-width: 900px) {
     .proj-container {
-        display: flex;
-        flex-direction: column;
         margin: 10px 0; /*Top/Bottom Left/Right */
     }
     
