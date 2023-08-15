@@ -17,8 +17,9 @@
         <!--Technical Skills-->
         <div class="section">
             <div class="list-bg-title"><b>TECHNICAL SKILLS</b></div>
-            <ul class="list-bg flex justify-between grid grid-cols-7 sm:max-md:grid-cols-2 md:max-lg:grid-cols-2">
-                <li v-for="skill in techSkills" :key="skill.id" class="skills">
+            <!-- <ul class="list-bg grid grid-cols-8 sm:max-md:grid-cols-2 md:max-lg:grid-cols-2"> -->
+            <ul class="list-bg" id="tech-skills-grid">
+                <li v-for="skill in techSkills" :key="skill.id" class="skills" id="tech-skill">
                     <div>
                         <div class="skill-title text-stone-400"><b>{{ skill.title.toUpperCase() }}</b></div>
                         <ul v-for="skillName in skill.names" :key="skillName.id">
@@ -265,6 +266,24 @@ export default {
                             skillName: 'JSON Web Token'
                         },
                     ]
+                },
+                {
+                    id: 'os',
+                    title: 'OS',
+                    names: [
+                        {
+                            id: 'windows',
+                            skillName: 'Windows'
+                        },
+                        {
+                            id: 'mac',
+                            skillName: 'MacOS'
+                        },
+                        {
+                            id: 'linux',
+                            skillName: 'Linux'
+                        }
+                    ]
                 }
             ],
             schools: [
@@ -308,6 +327,21 @@ export default {
     border-bottom-right-radius: 10px;
 }
 
+#tech-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+@media screen and (max-width: 1410px) {
+    #tech-skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #tech-skill {
+        min-height: 400px;
+    }
+}
+
 .exp-and-schools-element {
     background-color: rgb(55, 65, 81);
     margin: 5px;
@@ -344,13 +378,13 @@ export default {
     padding-bottom: 12px;
 }
 
-@media screen and (0px <= width <= 1000px) {
+@media screen and (max-width: 1000px) {
     .section {
-        margin: 12px 0;
+        margin: 12px 0; /*NS EW*/
     }
 }
 
-@media screen and (1001px <= width <= 5000px) {
+@media screen and (max-width: 5000px) {
     .section {
         padding: 20px;
     }

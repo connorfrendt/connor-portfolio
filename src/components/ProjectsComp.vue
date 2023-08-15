@@ -19,7 +19,7 @@
                                         <div class="proj-desc">{{ website.description }}</div>
                                     </div>
                                     <div class="proj-desc-tech">
-                                        <div class="tech-title">Technologies Used:</div>
+                                        <div class="tech-title">TECHNOLOGIES USED:</div>
                                         <ul>
                                             <li v-for="language in website.tech" :key="language.id" class="tech-used">
                                                 {{ language.name }}
@@ -46,14 +46,14 @@
                                     </div>
                                 </a>
                                 <div class="proj-text">
-                                    <div class="proj-desc-tech">
+                                    <div class="proj-desc-tech" id="techs">
                                         <a :href="project.link" target="_blank">
                                             <div class="proj-title">{{ project.title }}</div>
                                         </a>
                                         <div class="proj-desc">{{ project.description }}</div>
                                     </div>
                                     <div class="proj-desc-tech">
-                                        <div class="tech-title">Technologies Used:</div>
+                                        <div class="tech-title">TECHNOLOGIES USED:</div>
                                         <ul>
                                             <li v-for="language in project.tech" :key="language.id" class="tech-used">
                                                 {{ language.name }}
@@ -129,7 +129,7 @@ export default {
                     img: pokeLogo,
                     title: 'Pokedex',
                     link: "https://return-of-pokedex.netlify.app",
-                    description: 'A front-end Pokedex application with a psuedo-API with a filter to search for any Pokemon that fits within the given criteria.',
+                    description: 'A front-end Pokedex application with a psuedo-API and a filter to search for any Pokemon that fits within the given criteria.',
                     tech: [
                         {
                             id: 'html',
@@ -153,6 +153,7 @@ export default {
 </script>
 
 <style scoped>
+
 .section {
     padding: 10px;
 }
@@ -166,8 +167,6 @@ export default {
     border-radius: 5px;
     letter-spacing: 2px;
     font-weight: bold;
-    display: inline-block;
-    width: 100%;
 }
 
 .website-grid {
@@ -181,14 +180,12 @@ export default {
 
 .proj-container {
     display: flex;
-    width: 100%;
     border-radius: 5px;
 }
 
 .proj-text {
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 1fr;
 }
 
 .proj-title {
@@ -206,7 +203,6 @@ export default {
 
 .img-container {
     overflow: hidden;
-    width: 100%;
 }
 
 .proj-img {
@@ -221,18 +217,20 @@ export default {
 
 .proj-desc-tech {
     background-color: rgb(55, 65, 81);
-    width: 100%;
-    height: 100%;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .tech-title {
     color: rgb(168 162 158);
+    font-weight: bold;
+    border-bottom: 1px solid white;
 }
 
 
 .tech-used {
     color: white;
+    padding: 10px;
 }
 
 @media screen and (max-width: 1250px) {
