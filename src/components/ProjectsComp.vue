@@ -179,13 +179,16 @@ export default {
 }
 
 .proj-container {
-    display: flex;
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: 1fr 4fr;
     border-radius: 5px;
 }
 
 .proj-text {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
 }
 
 .proj-title {
@@ -199,10 +202,9 @@ export default {
     min-height: 48px;
 }
 
-
-
 .img-container {
     overflow: hidden;
+    min-width: 400px;
 }
 
 .proj-img {
@@ -217,6 +219,8 @@ export default {
 
 .proj-desc-tech {
     background-color: rgb(55, 65, 81);
+    /* width: 100%; */
+    /* height: 100%; */
     padding: 20px;
     border-radius: 10px;
 }
