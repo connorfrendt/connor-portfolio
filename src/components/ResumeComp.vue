@@ -17,7 +17,6 @@
         <!--Technical Skills-->
         <div class="section">
             <div class="list-bg-title"><b>TECHNICAL SKILLS</b></div>
-            <!-- <ul class="list-bg grid grid-cols-8 sm:max-md:grid-cols-2 md:max-lg:grid-cols-2"> -->
             <ul class="list-bg" id="tech-skills-grid">
                 <li v-for="skill in techSkills" :key="skill.id" class="skills" id="tech-skill">
                     <div>
@@ -331,15 +330,9 @@ export default {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 }
-@media screen and (max-width: 1410px) {
-    #tech-skills-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
 
-    #tech-skill {
-        min-height: 400px;
-    }
+#tech-skill {
+    /* min-height: 400px; */
 }
 
 .exp-and-schools-element {
@@ -348,7 +341,6 @@ export default {
     padding: 5px;
     border-radius: 5px;
 }
-
 
 .desc {
     color: rgb(156, 163, 175);
@@ -365,9 +357,11 @@ export default {
     padding: 10px;
     border-bottom: 1px solid white;
     letter-spacing: 2px;
+    font-size: 20px;
 }
 .skill-name {
-    padding: 5px 0px;
+    padding: 15px;
+    text-align: center;
 }
 
 .school-program-title {
@@ -378,15 +372,41 @@ export default {
     padding-bottom: 12px;
 }
 
+@media screen and (max-width: 5000px) {
+    .section {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 1523px) {
+    #tech-skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .section {
         margin: 12px 0; /*NS EW*/
     }
+    #tech-skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-@media screen and (max-width: 5000px) {
-    .section {
-        padding: 20px;
+@media screen and (max-width: 767px) {
+    #tech-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #tech-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-name{
+        font-size: 20px;
+        text-align: center;
     }
 }
 </style>
