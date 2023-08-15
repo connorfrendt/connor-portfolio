@@ -362,6 +362,7 @@ export default {
 .skill-name {
     padding: 15px;
     text-align: center;
+    font-size: 16.5px;
 }
 
 .school-program-title {
@@ -406,7 +407,6 @@ export default {
 
     .skill-name{
         font-size: 20px;
-        text-align: center;
     }
 }
 </style>
