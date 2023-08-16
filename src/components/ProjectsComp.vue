@@ -15,7 +15,11 @@
                                 </a>
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
-                                        <div class="proj-title"><a :href="website.link" target="_blank">{{ website.title }}</a></div>
+                                        <div class="proj-title">
+                                            <a :href="website.link" target="_blank">
+                                                {{ website.title }}
+                                            </a>
+                                        </div>
                                         <div class="proj-desc">{{ website.description }}</div>
                                     </div>
                                     <div class="proj-desc-tech tech-used-div">
@@ -79,7 +83,7 @@ import pokeLogo from "@/assets/img/Pokemon-Logo-resize.jpg";
 export default {
     data() {
         return {
-            myWorks: [
+            websites: [
                 {
                     id: 1,
                     img: seaEstaImage,

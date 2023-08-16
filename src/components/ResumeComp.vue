@@ -313,6 +313,9 @@ export default {
     color: white;
 }
 
+.section {
+    padding: 20px;
+}
 .list-bg-title {
     border-radius: 5px;
     background-color: rgb(120 113 108);
@@ -373,11 +376,6 @@ export default {
     padding-bottom: 12px;
 }
 
-@media screen and (max-width: 5000px) {
-    .section {
-        padding: 20px;
-    }
-}
 
 @media screen and (max-width: 1523px) {
     #tech-skills-grid {
