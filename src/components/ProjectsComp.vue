@@ -210,13 +210,11 @@ export default {
 
 .img-container {
     overflow: hidden;
-    /* min-width: 400px; */
 }
 
 .proj-img {
     object-fit: cover;
     transition: transform 0.25s ease;
-    /* height: 300px; */
 }
 
 .proj-img:hover {

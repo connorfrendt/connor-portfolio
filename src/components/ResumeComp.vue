@@ -4,7 +4,7 @@
         <!--Experience-->
         <div class="section">
             <div class="list-bg-title"><b>EXPERIENCE</b></div>
-            <ul id="exp" class="list-bg">
+            <ul class="list-bg">
                 <li v-for="job in experience" :key="job.id" class="exp-and-schools-element">
                     <div class="text-[25px]"><b>{{ job.title }}</b></div>
                     <div><i>{{ job.company }}</i> - <i>{{ job.type }}</i></div>
@@ -314,7 +314,7 @@ export default {
 }
 
 .section {
-    padding: 20px;
+    padding: 10px;
 }
 .list-bg-title {
     border-radius: 5px;
@@ -322,7 +322,6 @@ export default {
     padding: 10px;
     text-align: center;
     letter-spacing: 2px;
-    margin: 0 5px;
 }
 .list-bg {
     border-bottom-left-radius: 10px;
@@ -334,13 +333,9 @@ export default {
     grid-template-columns: repeat(8, 1fr);
 }
 
-#tech-skill {
-    /* min-height: 400px; */
-}
-
 .exp-and-schools-element {
     background-color: rgb(55, 65, 81);
-    margin: 5px;
+    margin: 5px 0;
     padding: 5px;
     border-radius: 5px;
 }
