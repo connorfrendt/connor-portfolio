@@ -15,7 +15,7 @@
                                 </a>
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
-                                        <div class="proj-title" :href="website.link">{{ website.title }}</div>
+                                        <div class="proj-title"><a :href="website.link" target="_blank">{{ website.title }}</a></div>
                                         <div class="proj-desc">{{ website.description }}</div>
                                     </div>
                                     <div class="proj-desc-tech tech-used-div">
@@ -212,7 +212,7 @@ export default {
 .proj-img {
     object-fit: cover;
     transition: transform 0.25s ease;
-    height: 300px;
+    /* height: 300px; */
 }
 
 .proj-img:hover {
@@ -238,6 +238,9 @@ export default {
 }
 
 @media screen and (min-width: 1071px) {
+    .proj-img {
+        height: 300px;
+    }
     .img-container {
         min-width: 400px;
     }
@@ -253,11 +256,14 @@ export default {
         align-items: center;
     }
     .section {
-        max-width: 502px;
+        max-width: 500px;
     }
     .proj-container {
         display: flex;
         flex-direction: column;
+    }
+    .proj-title {
+        font-size: 45px;
     }
     .proj-text {
         display: flex;
@@ -273,6 +279,17 @@ export default {
     .proj-container {
         margin: 10px 0; /*Top/Bottom Left/Right */
     }
-    
+}
+
+@media screen and (max-width: 600px) {
+    .img-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .proj-title {
+        font-size: 30px;
+    }
 }
 </style>
