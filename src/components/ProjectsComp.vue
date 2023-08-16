@@ -79,7 +79,7 @@ import pokeLogo from "@/assets/img/Pokemon-Logo-resize.jpg";
 export default {
     data() {
         return {
-            websites: [
+            myWorks: [
                 {
                     id: 1,
                     img: seaEstaImage,
