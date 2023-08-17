@@ -18,6 +18,20 @@
             
             <div id="parallax-one"></div>
 
+            <div class="text-white projects-div">
+                <div class="proj-wrapper">
+                    <div class="proj-title">Projects?</div>
+                    <RouterLink to="/projects">
+                        <div class="proj-sub-text">
+                            <div class="text-[30px]">Let's &lt;div&gt; into the code!</div>
+                            <font-awesome-icon class="text-[40px]" icon="fa-solid fa-arrow-right" beat />
+                        </div>
+                    </RouterLink>
+                </div>
+            </div>
+
+            <div id="parallax-two"></div>
+
             <div class="text-white flex sm:max-md:flex-col items-center md:max-xl: flex-row">
                 <div id="box" class="bg-stone-500">
                     Full Stack JavaScript
@@ -34,7 +48,7 @@
             </div>
 
 
-            <div id="parallax-two"></div>
+            
 
             <div id="quote">
                 <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
@@ -62,13 +76,14 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
+
 #parallax-one {
     background-image: url('../assets/img/spacetime1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-height: 700px;
+    min-height: 200px;
 }
 
 #parallax-two {
@@ -77,7 +92,7 @@ export default {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-height: 700px;
+    min-height: 200px;
 }
 
 .title {
@@ -103,7 +118,24 @@ export default {
 #about-me {
     padding: 10px;
     font-size: 20px;
-    /* text-align: center; */
+}
+
+.projects-div {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.proj-title {
+    font-size: 150px;
+}
+.proj-wrapper {
+    padding-left: 100px;
+}
+.proj-sub-text {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(120 113 108);
+    padding: 10px;
 }
 
 @media screen and (max-width: 640px) {
@@ -120,6 +152,13 @@ export default {
 
     .title {
         font-size: 32px;
+    }
+
+    .proj-title {
+        font-size: 50px;
+    }
+    .proj-wrapper {
+        padding-left: 0;
     }
 
     .picture {
