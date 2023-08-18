@@ -19,14 +19,17 @@
             <div id="parallax-one"></div>
 
             <div class="text-white projects-div">
-                <div class="proj-wrapper">
-                    <div class="proj-title">Projects?</div>
-                    <RouterLink to="/projects">
-                        <div class="proj-sub-text">
-                            <div class="text-[30px]">Let's &lt;div&gt; into the code!</div>
-                            <font-awesome-icon class="text-[40px]" icon="fa-solid fa-arrow-right" beat />
-                        </div>
-                    </RouterLink>
+                <div class="">
+                    <div class="proj-wrapper">
+                        <div class="proj-title">Projects?</div>
+                        <RouterLink to="/projects">
+                            <div class="proj-sub-text">
+                                <div class="">Let's &lt;div&gt; into the code!</div>
+                                <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
+                            </div>
+                        </RouterLink>
+                    </div>
+
                 </div>
             </div>
 
@@ -127,15 +130,16 @@ export default {
 }
 .proj-title {
     font-size: 150px;
+    text-align: left;
 }
-.proj-wrapper {
-    padding-left: 100px;
-}
+
 .proj-sub-text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(120 113 108);
     padding: 10px;
+    font-size: 30px;
 }
 
 @media screen and (max-width: 640px) {
@@ -154,11 +158,19 @@ export default {
         font-size: 32px;
     }
 
+    .proj-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .proj-title {
         font-size: 50px;
     }
-    .proj-wrapper {
-        padding-left: 0;
+    .proj-sub-text {
+        font-size: 20px;
+    }
+    .arrow {
+        margin-left: 50px;
     }
 
     .picture {
@@ -231,6 +243,10 @@ export default {
         margin: 0 auto;
         height: 300px;
         width: 225px;
+    }
+
+    .proj-wrapper {
+        padding-left: calc(10vw);
     }
 
     #quote {
