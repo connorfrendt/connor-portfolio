@@ -19,17 +19,14 @@
             <div id="parallax-one"></div>
 
             <div class="text-white projects-div">
-                <div class="">
-                    <div class="proj-wrapper">
-                        <div class="proj-title">Projects?</div>
-                        <RouterLink to="/projects">
-                            <div class="proj-sub-text">
-                                <div class="">Let's &lt;div&gt; into the code!</div>
-                                <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
-                            </div>
-                        </RouterLink>
-                    </div>
-
+                <div class="proj-wrapper">
+                    <div class="proj-title">Projects?</div>
+                    <RouterLink to="/projects">
+                        <div class="proj-sub-text">
+                            <div class="">Let's &lt;div&gt; into the code!</div>
+                            <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
+                        </div>
+                    </RouterLink>
                 </div>
             </div>
 
@@ -98,12 +95,25 @@ export default {
     min-height: 200px;
 }
 
+#pic-title {
+    padding: 30px 20px;
+    height: 100vh;
+}
+
+.picture {
+    border-radius: 5px 0px 0px 5px; /* tl tr br bl (clockwise) */
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    min-width: 225px;
+}
+
 .title {
     color: white;
     text-align: center;
     font-size: 40px;
     font-family: 'Playfair', serif;
-    padding: 5px;
+    padding: 20px 5px;
     letter-spacing: 5px;
 }
 
@@ -118,6 +128,13 @@ export default {
     min-width: 250px;
 }
 
+#name {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
 #about-me {
     padding: 10px;
     font-size: 20px;
@@ -127,7 +144,9 @@ export default {
     height: 100vh;
     display: flex;
     align-items: center;
+    padding: 20px;
 }
+
 .proj-title {
     font-size: 150px;
     text-align: left;
@@ -142,26 +161,87 @@ export default {
     font-size: 30px;
 }
 
-@media screen and (max-width: 640px) {
-    #pic-title {
-        padding: 20px;
-        height: 100vh;
+#quote {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    padding: 50px;
+}
+
+#quote-left,
+#quote-right {
+    font-size: 40px;
+    margin: 10px;
+}
+
+@media screen and (min-width: 1001px) {
+    #title-bg {
+        background-color: rgba(120, 113, 108, 0.5);
+        border-radius: 0px 10px 10px 0px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 100px;
     }
 
+    .title {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    #pic-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .proj-wrapper {
+        padding-left: calc(10vw);
+    }
+
+}
+
+@media screen and (641px <= width <= 1000px) {
+    .title {
+        padding: 0;
+    }
+
+    .picture {
+        height: 300px;
+        width: 225px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 640px) {
     #name {
-        color: white;
         font-size: 40px;
-        text-align: center;
+    }
+
+    #title-bg {
+        /* display: grid;
+        grid-template-rows: 1fr 1fr; */
+        /* background-color: red; */
+        /* margin-top: 50px; */
     }
 
     .title {
         font-size: 32px;
+        /* margin-top: 50px; */
     }
 
+    .projects-div {
+        justify-content: center;
+    }
     .proj-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
     .proj-title {
         font-size: 50px;
@@ -176,7 +256,7 @@ export default {
     .picture {
         border-radius: 5px;
         height: 225px;
-        width: 168.75px;
+        min-width: 168.75px;
         margin: 0 auto;
     }
 
@@ -205,66 +285,7 @@ export default {
     }
 }
 
-@media screen and (min-width: 641px) {
-    #title-bg {
-        background-color: rgba(120, 113, 108, 0.5);
-        border-radius: 0px 10px 10px 0px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        padding: 0 100px;
-    }
-    
-    #name {
-        font-size: 60px;
-        color: white;
-        text-align: center;
-    }
 
-    .title {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-
-    #pic-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        height: 100vh;
-    }
-
-    .picture {
-        border-radius: 5px 0px 0px 5px; /* tl tr br bl (clockwise) */
-        display: block;
-        margin: 0 auto;
-        height: 300px;
-        width: 225px;
-    }
-
-    .proj-wrapper {
-        padding-left: calc(10vw);
-    }
-
-    #quote {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 25px;
-        padding: 50px;
-    }
-
-    #quote-left,
-    #quote-right {
-        font-size: 40px;
-        margin: 10px;
-    }
-}
 
 #linkedin {
     border-right: 1px solid gray;
