@@ -32,23 +32,19 @@
 
             <div id="parallax-two"></div>
 
-            <div class="text-white flex sm:max-md:flex-col items-center md:max-xl: flex-row">
-                <div id="box" class="bg-stone-500">
-                    Full Stack JavaScript
-                    <br />
-                    <div class="line-through">Duveloper</div>
-                    <div class="line-through">Developr</div>
-                    <div class="line-through">Develupr</div>
-                    <div>I'm good at making stuff</div>
-                </div>
-    
-                <div id="about-me">
-                    After graduating with a B.S. in Mathematics, I eagerly plunged in head first into the tech world, becoming a Full Stack JavaScript Developer. Complex puzzles and head-scratchers are what I thrive off of. Looking for companies that are driven and have a positive atmosphere. With the knowledge of both front and back end, I am able to see many different perspectives and easily adapt accordingly. My ambition to help others and my craving for more knowledge is what drives me.
-                </div>
+            <div class="text-white resume-div">
+                <div>You can "resume"</div>
+                <div class="resume-div-sub-text">
+                    <div>looking at my</div>
+                    <RouterLink to="/resume" class="resume-link">
+                        résumé
+                        <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
+                    </RouterLink>
+                </div> 
+                
             </div>
 
-
-            
+            <div id="parallax-two"></div>
 
             <div id="quote">
                 <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
@@ -59,8 +55,6 @@
                 </i>
                 <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
             </div>
-
-
             
         </div>
 
@@ -148,7 +142,7 @@ export default {
 }
 
 .proj-title {
-    font-size: 150px;
+    font-size: 60px;
     text-align: left;
 }
 
@@ -159,6 +153,28 @@ export default {
     background-color: rgb(120 113 108);
     padding: 10px;
     font-size: 30px;
+    height: 65px;
+}
+
+.resume-div {
+    height: 100vh;
+    font-size: 60px;
+}
+
+.resume-div-sub-text {
+    text-align: right;
+}
+
+.resume-link {
+    background-color: rgb(120 113 108);
+    padding: 10px;
+    white-space: nowrap;
+    font-size: 30px;
+    height: 65px;
+}
+
+.arrow {
+    margin-left: 50px;
 }
 
 #quote {
@@ -177,7 +193,7 @@ export default {
     margin: 10px;
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1021px) {
     #title-bg {
         background-color: rgba(120, 113, 108, 0.5);
         border-radius: 0px 10px 10px 0px;
@@ -205,9 +221,16 @@ export default {
         padding-left: calc(10vw);
     }
 
+    .resume-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        padding-right: calc(10vw);
+    }
 }
 
-@media screen and (641px <= width <= 1000px) {
+@media screen and (801px <= width <= 1020px) {
     .title {
         padding: 0;
     }
@@ -217,23 +240,27 @@ export default {
         width: 225px;
         border-radius: 5px;
     }
+
+    .proj-wrapper {
+        padding-left: calc(10vw);
+    }
+
+    .resume-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        padding-right: calc(10vw);
+    }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 800px) {
     #name {
         font-size: 40px;
     }
 
-    #title-bg {
-        /* display: grid;
-        grid-template-rows: 1fr 1fr; */
-        /* background-color: red; */
-        /* margin-top: 50px; */
-    }
-
     .title {
         font-size: 32px;
-        /* margin-top: 50px; */
     }
 
     .projects-div {
@@ -251,6 +278,14 @@ export default {
     }
     .arrow {
         margin-left: 50px;
+    }
+
+    .resume-div {
+        font-size: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .picture {
@@ -285,6 +320,12 @@ export default {
     }
 }
 
+@media screen and (max-width: 520px) {
+    .resume-div-sub-text {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 
 #linkedin {
