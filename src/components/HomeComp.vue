@@ -166,6 +166,7 @@ export default {
 }
 
 .resume-link {
+    display: inline-block;
     background-color: rgb(120 113 108);
     padding: 10px;
     white-space: nowrap;
