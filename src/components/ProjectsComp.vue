@@ -131,7 +131,7 @@ export default {
                 {
                     id: 1,
                     img: pokeLogo,
-                    title: 'Pokedex',
+                    title: 'Pokédex',
                     link: "https://return-of-pokedex.netlify.app",
                     description: 'A front-end Pokedex application with a psuedo-API and a filter to search for any Pokemon that fits within the given criteria.',
                     tech: [
@@ -146,6 +146,10 @@ export default {
                         {
                             id: 'api',
                             name: 'Simulated API'
+                        },
+                        {
+                            id: 'vue',
+                            name: 'VueJS'
                         }
                     ]
                 }
@@ -201,6 +205,7 @@ export default {
     color: rgb(120 113 108);
     font-weight: bold;
     font-size: 50px;
+    text-align: center;
 }
 
 .proj-desc {

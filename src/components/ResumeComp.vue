@@ -65,7 +65,7 @@ export default {
                     company: 'Novacoast',
                     place: 'Fully Remote',
                     duration: 'May 2022 - August 2022',
-                    description: 'In the process of learning and using TypeScript and Composition API within the Vue framework to redesign the internal portal.'
+                    description: 'Was in the process of learning and using TypeScript and Composition API within the Vue framework to redesign the internal portal.'
                 },
                 {
                     id: 3,
