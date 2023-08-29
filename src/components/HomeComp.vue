@@ -44,7 +44,7 @@
                 
             </div>
 
-            <div id="parallax-two"></div>
+            <div id="parallax-three"></div>
 
             <div id="quote">
                 <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
@@ -72,7 +72,7 @@ export default {
 
 
 #parallax-one {
-    background-image: url('../assets/img/spacetime1.jpg');
+    background-image: url('../assets/img/bg1-transformed-cropped.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -81,7 +81,16 @@ export default {
 }
 
 #parallax-two {
-    background-image: url('../assets/img/mt_hood_gorge.jpg');
+    background-image: url('../assets/img/bg2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+}
+
+#parallax-three {
+    background-image: url('../assets/img/wireless-mesh-networks-1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;

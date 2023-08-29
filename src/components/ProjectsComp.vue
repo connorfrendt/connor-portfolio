@@ -79,6 +79,7 @@
 import seaEstaImage from "@/assets/img/sea-esta-cabo-resize.jpg";
 import laGringaImage from "@/assets/img/lagringa-catamaran-resize.jpg";
 import pokeLogo from "@/assets/img/Pokemon-Logo-resize.jpg";
+import dogPic from "@/assets/img/German-Shepherd-Husky-Mix.jpg"
 
 export default {
     data() {
@@ -146,6 +147,31 @@ export default {
                         {
                             id: 'api',
                             name: 'Simulated API'
+                        },
+                        {
+                            id: 'vue',
+                            name: 'VueJS'
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    img: dogPic,
+                    title: 'Dog Picture Gallery',
+                    link: "https://doggypics.netlify.app/#/",
+                    description: 'A front-end single page image application with a self-made API that can upload pictures to a specified album.  Uses local storage as a database to manage album/picture data.',
+                    tech: [
+                    {
+                            id: 'html',
+                            name: 'HTML'
+                        },
+                        {
+                            id: 'css',
+                            name: 'CSS'
+                        },
+                        {
+                            id: 'api',
+                            name: 'Self-made image API'
                         },
                         {
                             id: 'vue',
