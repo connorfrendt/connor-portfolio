@@ -16,7 +16,7 @@
         </div>
 
         <div>
-            
+
         </div>
     </div>
 </template>
@@ -26,5 +26,14 @@
 </script>
 
 <style>
-
+#box {
+    border-radius: 5px;
+    color: white;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    font-size: 20px;
+    min-width: 250px;
+}
 </style>
