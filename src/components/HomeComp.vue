@@ -49,13 +49,16 @@
             <div id="parallax-three"></div>
 
             <div id="quote">
-                <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
-                <i>
-                    There are 10 types of people in the world -
-                    <br />
-                    those that understand binary, and those that don't.
-                </i>
-                <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
+                <!-- <div> -->
+                    <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
+                    <i>
+                        There are 10 types of people in the world -
+                        <br />
+                        those that understand binary, and those that don't.
+                    </i>
+                    <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
+
+                <!-- </div> -->
             </div>
             
         </div>
@@ -122,17 +125,6 @@ export default {
     letter-spacing: 5px;
 }
 
-#box {
-    border-radius: 5px;
-    color: white;
-    width: 250px;
-    text-align: center;
-    padding: 10px;
-    margin: 20px;
-    font-size: 20px;
-    min-width: 250px;
-}
-
 #name {
     font-size: 60px;
     color: white;
@@ -191,6 +183,7 @@ export default {
 }
 
 #quote {
+    background-color: rgb(31, 41, 55);
     text-align: center;
     display: flex;
     align-items: center;
@@ -338,6 +331,21 @@ export default {
         display: flex;
         align-self: end;
         margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 454px) {
+    #quote-left,
+    #quote-right {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 454px) {
+    #quote {
+        font-size: 20px;
     }
 }
 
