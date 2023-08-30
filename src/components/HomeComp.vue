@@ -33,14 +33,16 @@
             <div id="parallax-two"></div>
 
             <div class="text-white resume-div">
-                <div>You can "resume"</div>
-                <div class="resume-div-sub-text">
+                <div class="resume-wrapper">
+                    <div>You can "resume"</div>
                     <div>looking at my</div>
-                    <RouterLink to="/resume" class="resume-link">
-                        résumé
-                        <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
+                    <RouterLink to="/resume">
+                        <div class="resume-link">
+                            <span>résumé</span>
+                            <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
+                        </div>
                     </RouterLink>
-                </div> 
+                </div>
                 
             </div>
 
@@ -170,12 +172,13 @@ export default {
     font-size: 60px;
 }
 
-.resume-div-sub-text {
+.resume-wrapper {
     text-align: right;
 }
 
 .resume-link {
     display: inline-block;
+    text-align: right;
     background-color: rgb(120 113 108);
     padding: 10px;
     white-space: nowrap;
@@ -255,6 +258,10 @@ export default {
         padding-left: calc(10vw);
     }
 
+    .resume-wrapper {
+        padding-right: calc(10vw);
+    }
+
     .resume-div {
         display: flex;
         flex-direction: column;
@@ -298,6 +305,10 @@ export default {
         align-items: center;
     }
 
+    .resume-wrapper {
+        padding: 10px;
+    }
+
     .picture {
         border-radius: 5px;
         height: 225px;
@@ -329,14 +340,6 @@ export default {
         margin-bottom: 10px;
     }
 }
-
-@media screen and (max-width: 520px) {
-    .resume-div-sub-text {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 
 #linkedin {
     border-right: 1px solid gray;

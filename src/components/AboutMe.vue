@@ -14,6 +14,10 @@
                 After graduating with a B.S. in Mathematics, I eagerly plunged in head first into the tech world, becoming a Full Stack JavaScript Developer. Complex puzzles and head-scratchers are what I thrive off of. Looking for companies that are driven and have a positive atmosphere. With the knowledge of both front and back end, I am able to see many different perspectives and easily adapt accordingly. My ambition to help others and my craving for more knowledge is what drives me.
             </div>
         </div>
+
+        <div>
+            
+        </div>
     </div>
 </template>
 
