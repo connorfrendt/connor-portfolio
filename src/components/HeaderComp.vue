@@ -3,9 +3,9 @@
         <!--Header-->
         <div class="box-shadow flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
             <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
-            <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">RESUME</RouterLink>
-            <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">PROJECTS</RouterLink>
-            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">ABOUT ME</RouterLink>
+            <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">RESUME</RouterLink>
+            <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">PROJECTS</RouterLink>
+            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">ABOUT ME</RouterLink>
             
             <div class="flex items-center ml-auto">
                 <RouterLink to="/contactme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">Contact Me</RouterLink>
@@ -83,5 +83,9 @@ export default {
 
 .box-shadow {
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.border-cls {
+    border-left: 2px solid rgb(31, 41, 55);
 }
 </style>
