@@ -25,14 +25,18 @@
         </div>
     
         <!--Mobile Header-->
-        <div class="md:hidden fixed top-0 w-full box-shadow z-10">
+        <div class="md:hidden fixed top-0 w-full box-shadow z-10" ref="mobileHeader">
             <div class="w-full bg-gray-700 text-center relative">
                 <button @click="open = !open" class="p-[12px] w-full text-gray-400">
                     <font-awesome-icon icon="fa-solid fa-bars" class="pr-[10px]" />
                     <font-awesome-icon icon="fa-solid fa-caret-down" />
                 </button>
     
-                <div v-if="open" class="w-full text-white absolute bg-gray-700 box-shadow">
+                <div
+                    v-if="open"
+                    
+                    class="w-full text-white absolute bg-gray-700 box-shadow"
+                >
                     <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
                     <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
                     <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
@@ -66,6 +70,28 @@ export default {
     data() {
         return {
             open: false,
+        }
+    },
+    mounted() {
+        // Add a click event listener to the document
+        console.log('1');
+        console.log(this.open);
+        document.addEventListener("click", this.handleDocumentClick);
+    },
+    beforeDestroy() {
+        // Remove the click event listener when the component is destroyed
+        console.log('2');
+        console.log(this.open);
+        document.removeEventListener("click", this.handleDocumentClick);
+    },
+    methods: {
+        handleDocumentClick(event) {
+            // Check if the click occured outide of the mobile header
+            const mobileHeader = this.$refs.mobileHeader
+            
+            if(this.open && mobileHeader && !mobileHeader.contains(event.target)) {
+                this.open = false;
+            }
         }
     }
 }
