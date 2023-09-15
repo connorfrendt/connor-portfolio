@@ -160,7 +160,7 @@ export default {
 
 @media screen and (max-width: 545px) {
     .extra {
-        margin: 10px;
+        margin: 10px 0;
         padding: 10px;
     }
 }
