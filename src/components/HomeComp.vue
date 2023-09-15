@@ -49,16 +49,13 @@
             <div id="parallax-three"></div>
 
             <div id="quote">
-                <!-- <div> -->
-                    <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
-                    <i>
-                        There are 10 types of people in the world -
-                        <br />
-                        those that understand binary, and those that don't.
-                    </i>
-                    <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
-
-                <!-- </div> -->
+                <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
+                <i>
+                    There are 10 types of people in the world -
+                    <br />
+                    those that understand binary, and those that don't.
+                </i>
+                <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
             </div>
             
         </div>
@@ -341,9 +338,7 @@ export default {
         padding: 0;
         margin: 0;
     }
-}
 
-@media screen and (max-width: 454px) {
     #quote {
         font-size: 20px;
     }

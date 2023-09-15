@@ -74,14 +74,10 @@ export default {
     },
     mounted() {
         // Add a click event listener to the document
-        console.log('1');
-        console.log(this.open);
         document.addEventListener("click", this.handleDocumentClick);
     },
     beforeDestroy() {
         // Remove the click event listener when the component is destroyed
-        console.log('2');
-        console.log(this.open);
         document.removeEventListener("click", this.handleDocumentClick);
     },
     methods: {
