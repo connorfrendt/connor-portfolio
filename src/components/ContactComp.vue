@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .overall-contact {
     font-size: 24px;
     display: flex;

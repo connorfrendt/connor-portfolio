@@ -79,7 +79,7 @@
 import seaEstaImage from "@/assets/img/sea-esta-cabo-resize.jpg";
 import laGringaImage from "@/assets/img/lagringa-catamaran-resize.jpg";
 import pokeLogo from "@/assets/img/Pokemon-Logo-resize.jpg";
-import dogPic from "@/assets/img/German-Shepherd-Husky-Mix.jpg"
+import dogPic from "@/assets/img/cute-dog-resize.jpg"
 
 export default {
     data() {

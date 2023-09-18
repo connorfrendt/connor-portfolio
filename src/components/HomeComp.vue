@@ -23,7 +23,7 @@
                     <div class="proj-title">Projects?</div>
                     <RouterLink to="/projects">
                         <div class="proj-sub-text">
-                            <div class="">Let's &lt;div&gt; into the code!</div>
+                            <div>Let's &lt;div&gt; into the code!</div>
                             <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
                         </div>
                     </RouterLink>
@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
 
@@ -103,6 +103,7 @@ export default {
 #pic-title {
     padding: 30px 20px;
     height: 100vh;
+    min-height: 600px;
 }
 
 .picture {
@@ -342,19 +343,5 @@ export default {
     #quote {
         font-size: 20px;
     }
-}
-
-#linkedin {
-    border-right: 1px solid gray;
-}
-
-.social-links {
-    color: lightgray;
-    padding: 0 15px;
-}
-
-.social-links:visited,
-.social-links:active {
-    text-decoration: none;
 }
 </style>

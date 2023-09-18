@@ -32,11 +32,7 @@
                     <font-awesome-icon icon="fa-solid fa-caret-down" />
                 </button>
     
-                <div
-                    v-if="open"
-                    
-                    class="w-full text-white absolute bg-gray-700 box-shadow"
-                >
+                <div v-if="open" class="w-full text-white absolute bg-gray-700 box-shadow">
                     <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
                     <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
                     <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
@@ -93,7 +89,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .socials {
     font-size: 30px;
 }
@@ -101,6 +97,21 @@ export default {
 .socials-mobile {
     margin-top: 20px;
     font-size: 25px;
+}
+
+#linkedin {
+    border-right: 1px solid gray;
+}
+
+
+.social-links {
+    color: lightgray;
+    padding: 0 15px;
+}
+
+.social-links:visited,
+.social-links:active {
+    text-decoration: none;
 }
 
 .box-shadow {

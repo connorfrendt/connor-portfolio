@@ -116,10 +116,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .about-me-section {
-    padding: 50px;
-}
+        padding: 50px;
+    }
 
 #box {
     border-radius: 5px;
@@ -136,6 +137,7 @@ export default {
     font-size: 40px;
     background-color: rgb(55 65 81);
     padding: 20px;
+    margin: 10px 0;
     border-radius: 5px;
 }
 
@@ -146,6 +148,12 @@ export default {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .about-me-section {
+        padding: 10px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -160,7 +168,7 @@ export default {
 
 @media screen and (max-width: 545px) {
     .extra {
-        margin: 10px 0;
+        margin: 20px 0;
         padding: 10px;
     }
 }
@@ -185,7 +193,7 @@ export default {
 
 @media screen and (max-width: 545px) {
     .about-me-section {
-        padding: 25px;
+        /* padding: 25px; */
     }
 }
 </style>
