@@ -1,6 +1,8 @@
 <template>
     <div id="resume">
 
+        <!-- <DownloadResume></DownloadResume> -->
+
         <!--Experience-->
         <div class="section">
             <div class="list-bg-title"><b>EXPERIENCE</b></div>
@@ -13,7 +15,7 @@
                 </li>
             </ul>
         </div>
-
+        
         <!--Technical Skills-->
         <div class="section">
             <div class="list-bg-title"><b>TECHNICAL SKILLS</b></div>
@@ -45,6 +47,8 @@
 </template>
 
 <script>
+// import DownloadResume from './DownloadResume.vue';
+
 export default {
     data() {
         return {
@@ -304,6 +308,10 @@ export default {
                 }
             ]
         }
+    },
+
+    components: {
+        // DownloadResume
     }
 }
 </script>
