@@ -200,14 +200,6 @@ export default {
     white-space: nowrap;
     font-size: 30px;
     height: 65px;
-
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(120 113 108);
-    padding: 10px;
-    font-size: 30px;
-    height: 65px; */
 }
 
 .arrow {
@@ -315,6 +307,7 @@ export default {
     }
     .proj-title {
         font-size: 50px;
+        text-align: center;
     }
     .proj-sub-text {
         font-size: 20px;
@@ -333,6 +326,17 @@ export default {
 
     .resume-wrapper {
         padding: 10px;
+        text-align: center;
+    }
+    
+    .resume-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(120 113 108);
+        padding: 10px;
+        font-size: 30px;
+        height: 65px;
     }
 
     .picture {
