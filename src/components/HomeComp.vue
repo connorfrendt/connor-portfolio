@@ -88,11 +88,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
 #parallax-one {
-    background-image: url('../assets/img/bg1-transformed-cropped.jpg');
+    background-image: url('../assets/img/bg1.jpg');
     background-repeat: no-repeat;
 }
 #para-one-sub {
-    background-image: url('../assets/img/bg1-200h.jpg');
+    background-image: url('../assets/img/bg1-mobile.jpg');
     background-position: center;
 }
 
@@ -101,16 +101,16 @@ export default {
     background-repeat: no-repeat;
 }
 #para-two-sub {
-    background-image: url('../assets/img/bg2-200h.jpg');
+    background-image: url('../assets/img/bg2-mobile.jpg');
     background-position: center;
 }
 
 #parallax-three {
-    background-image: url('../assets/img/wireless-mesh-networks-1.jpg');
+    background-image: url('../assets/img/bg3.jpg');
     background-repeat: no-repeat;
 }
 #para-three-sub {
-    background-image: url('../assets/img/bg3-200h.jpg');
+    background-image: url('../assets/img/bg3-mobile.jpg');
     background-position: center;
 }
 
@@ -200,10 +200,19 @@ export default {
     white-space: nowrap;
     font-size: 30px;
     height: 65px;
+
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(120 113 108);
+    padding: 10px;
+    font-size: 30px;
+    height: 65px; */
 }
 
 .arrow {
     margin-left: 50px;
+    font-size: 25px;
 }
 
 #quote {
