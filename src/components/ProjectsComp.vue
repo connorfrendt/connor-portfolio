@@ -16,9 +16,12 @@
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
                                         <div class="proj-title">
-                                            <a :href="website.link" target="_blank">
-                                                {{ website.title }}
-                                            </a>
+                                            <div class="proj-title-container">
+                                                <a :href="website.link" target="_blank">
+                                                    {{ website.title }}
+                                                    <font-awesome-icon class="pop-out-btn" icon="fa-solid fa-up-right-from-square" />
+                                                </a>
+                                            </div>
                                         </div>
                                         <div class="proj-desc">{{ website.description }}</div>
                                     </div>
@@ -51,9 +54,14 @@
                                 </a>
                                 <div class="proj-text">
                                     <div class="proj-desc-tech">
-                                        <a :href="project.link" target="_blank">
-                                            <div class="proj-title">{{ project.title }}</div>
-                                        </a>
+                                        <div class="proj-title">
+                                            <div class="proj-title-container">
+                                                <a :href="project.link" target="_blank">
+                                                    {{ project.title }}
+                                                    <font-awesome-icon class="pop-out-btn" icon="fa-solid fa-up-right-from-square" />
+                                                </a>
+                                            </div>
+                                        </div>
                                         <div class="proj-desc">{{ project.description }}</div>
                                     </div>
                                     <div class="proj-desc-tech tech-used-div">
@@ -210,7 +218,6 @@ export default {
     text-align: center;
 }
 
-
 .proj-div {
     margin: 20px 0;
 }
@@ -227,11 +234,24 @@ export default {
     grid-template-columns: 3fr 1fr;
 }
 
+.proj-title-container {
+    position: relative;
+    text-align: center;
+}
+
 .proj-title {
     color: rgb(120 113 108);
     font-weight: bold;
     font-size: 50px;
     text-align: center;
+    display: inline-block;
+}
+
+.pop-out-btn {
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: -20px;
 }
 
 .proj-desc {

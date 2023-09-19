@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--Header-->
-        <div class="box-shadow flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
+        <div class="z-10 box-shadow flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
             <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
             <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">RESUME</RouterLink>
             <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">PROJECTS</RouterLink>
@@ -90,6 +90,9 @@ export default {
 </script>
 
 <style scoped>
+/* .foobar {
+    z-index: 1;
+} */
 .socials {
     font-size: 30px;
 }
