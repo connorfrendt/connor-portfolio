@@ -16,7 +16,8 @@
                 </div>
             </div>
             
-            <div id="parallax-one"></div>
+            <div id="parallax-one" class="parallax" v-if="desktop"></div>
+            <div id="para-one-sub" class="para-sub" v-if="mobile"></div>
 
             <div class="text-white projects-div">
                 <div class="proj-wrapper">
@@ -30,7 +31,8 @@
                 </div>
             </div>
 
-            <div id="parallax-two"></div>
+            <div id="parallax-two" class="parallax" v-if="desktop"></div>
+            <div id="para-two-sub" class="para-sub" v-if="mobile"></div>
 
             <div class="text-white resume-div">
                 <div class="resume-wrapper">
@@ -46,7 +48,8 @@
                 
             </div>
 
-            <div id="parallax-three"></div>
+            <div id="parallax-three" class="parallax" v-if="desktop"></div>
+            <div id="para-three-sub" class="para-sub" v-if="mobile"></div>
 
             <div id="quote">
                 <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
@@ -65,40 +68,63 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            width: window.innerWidth
+        }
+    },
+    computed: {
+        desktop() {
+            return this.width > 800;
+        },
+        mobile() {
+            return this.width <= 800;
+        }
+    }
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
 
-
 #parallax-one {
     background-image: url('../assets/img/bg1-transformed-cropped.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+}
+#para-one-sub {
+    background-image: url('../assets/img/bg1-200h.jpg');
     background-position: center;
-    background-size: cover;
-    min-height: 200px;
 }
 
 #parallax-two {
     background-image: url('../assets/img/bg2.png');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+}
+#para-two-sub {
+    background-image: url('../assets/img/bg2-200h.jpg');
     background-position: center;
-    background-size: cover;
-    min-height: 200px;
 }
 
 #parallax-three {
     background-image: url('../assets/img/wireless-mesh-networks-1.jpg');
     background-repeat: no-repeat;
+}
+#para-three-sub {
+    background-image: url('../assets/img/bg3-200h.jpg');
+    background-position: center;
+}
+
+.parallax {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     min-height: 200px;
 }
+.para-sub {
+    background-size: cover;
+    min-height: 200px;
+}
+
 
 #pic-title {
     padding: 30px 20px;
