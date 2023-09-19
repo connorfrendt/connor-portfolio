@@ -80,7 +80,7 @@ export default {
         mobile() {
             return this.width <= 800;
         }
-    }
+    },
 }
 </script>
 
