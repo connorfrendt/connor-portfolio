@@ -192,8 +192,8 @@ export default {
 }
 
 @media screen and (max-width: 545px) {
-    .about-me-section {
-        /* padding: 25px; */
-    }
+    /* .about-me-section {
+        padding: 25px;
+    } */
 }
 </style>

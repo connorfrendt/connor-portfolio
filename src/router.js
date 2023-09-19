@@ -18,7 +18,7 @@ export default new VueRouter ({
         { path: '/aboutme', component: AboutMe },
         { path: '*', redirect: '/' },
     ],
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior(savedPosition) {
         if(savedPosition) {
             // If a saved position is available, use it
             return savedPosition;
