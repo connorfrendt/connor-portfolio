@@ -90,7 +90,7 @@ export default {
     }
     
     .email-icons {
-        padding: 150px 5px 5px 5px;
+        padding: 75px 5px 75px 5px;
         font-size: 20px;
     }
 
