@@ -250,7 +250,7 @@ export default {
                     names: [
                         {
                             id: 'api',
-                            skillName: 'REST APIs'
+                            skillName: 'RESTful APIs'
                         },
                         {
                             id: 'rwb',
