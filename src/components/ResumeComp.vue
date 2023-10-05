@@ -78,7 +78,7 @@ export default {
                     company: 'Vetsource',
                     place: 'Portland, OR',
                     duration: 'October 2021 - December 2021',
-                    description: 'I called 5 - 10 veterinary practices per day, I used Salesforce to keep the data up to date for those practices, and I sent out documents via Salesforce & Docusign.'
+                    description: 'Called 5 - 10 veterinary practices per day, I used Salesforce to keep the data up to date for those practices, and I sent out documents via Salesforce & Docusign.'
                 },
                 {
                     id: 2,
