@@ -91,9 +91,6 @@ export default {
 </script>
 
 <style scoped>
-/* .foobar {
-    z-index: 1;
-} */
 .socials {
     font-size: 30px;
 }
