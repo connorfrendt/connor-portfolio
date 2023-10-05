@@ -60,7 +60,7 @@ export default {
                     company: 'Bridgesense',
                     place: 'Fully Remote',
                     duration: 'December 2022 - February 2023',
-                    description: 'Built websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, & Peek API.'
+                    description: 'Built 2 websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, & Peek API.'
                 },
                 {
                     id: 4,
