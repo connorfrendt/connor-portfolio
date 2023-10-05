@@ -29,7 +29,8 @@
             <div class="w-full bg-gray-700 text-center relative">
                 <button @click="open = !open" class="p-[12px] w-full text-gray-400">
                     <font-awesome-icon icon="fa-solid fa-bars" class="pr-[10px]" />
-                    <font-awesome-icon icon="fa-solid fa-caret-down" />
+                    <font-awesome-icon icon="fa-solid fa-caret-down" v-if="!open" />
+                    <font-awesome-icon icon="fa-solid fa-caret-up" v-if="open" />
                 </button>
     
                 <div v-if="open" class="w-full text-white absolute bg-gray-700 box-shadow">
