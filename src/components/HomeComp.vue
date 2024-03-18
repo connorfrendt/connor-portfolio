@@ -14,8 +14,19 @@
                         <div>JAVASCRIPT DEVELOPER</div>
                     </div>
                 </div>
+                
             </div>
             
+            <!--
+            <div class="text-white flex justify-around m-[20px]">
+                <div class="skills  p-[20px] m-[10px]">Full Stack Software Developer</div>
+                <div class="skills  p-[20px] m-[10px]">Database Developer</div>
+                <div class="skills  p-[20px] m-[10px]">Mathematician</div>
+                <div class="skills  p-[20px] m-[10px]">Cyber Security Analyst (in progress)</div>
+                <div class="skills  p-[20px] m-[10px]">Data Analyst (in progress)</div>
+            </div>
+            -->
+
             <div id="parallax-one" class="parallax" v-if="desktop"></div>
             <div id="para-one-sub" class="para-sub" v-if="mobile"></div>
 
@@ -86,6 +97,13 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
+
+.skills {
+    background-color: rgba(120, 113, 108, 0.5);
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+}
 
 #parallax-one {
     background-image: url('../assets/img/bg1.jpg');
