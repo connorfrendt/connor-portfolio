@@ -37,7 +37,7 @@
             <ul id="education" class="list-bg">
                 <li v-for="school in schools" :key="school.id" class="exp-and-schools-element">
                     <div class="school-program-title"><b>{{ school.program }}</b></div>
-                    <div><i>{{ school.gradDate }}</i></div>
+                    <!-- <div><i>{{ school.gradDate }}</i></div> -->
                     <div>{{ school.institution }} | {{ school.place }}</div>
                     <div class="desc">{{ school.description }}</div>
                 </li>
@@ -291,9 +291,15 @@ export default {
             ],
             schools: [
                 {
+                    id: 'cyber',
+                    institution: 'Google',
+                    program: 'Google Cybersecurity Program',
+                    place: 'Remote',
+                    description: '250 hours of learning SIEM tools, the NIST framework, exploring packet sniffers, utilizing Python for task automation, alongside other cyber security related facets.'
+                },
+                {
                     id: 'alchemy',
                     institution: 'Alchemy Code Lab',
-                    gradDate: 'Feb 2019',
                     program: 'Full Stack Software Engineering',
                     place: 'Portland, OR',
                     description: '5-6 months of 60-70 hour work weeks learning Full Stack JavaScript'
@@ -301,7 +307,6 @@ export default {
                 {
                     id: 'wwu',
                     institution: 'Western Washington University',
-                    gradDate: 'Dec 2017',
                     program: 'B.S. in Mathematics',
                     place: 'Bellingham, WA',
                     description: '5 years of single and multivariable calculus, with linear algebra, systems of partial differential equations, and forier analysis.'
