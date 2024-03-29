@@ -295,7 +295,7 @@ export default {
                     institution: 'Google',
                     program: 'Google Cybersecurity Program',
                     place: 'Remote',
-                    description: '250 hours of learning SIEM tools, the NIST framework, exploring packet sniffers, utilizing Python for task automation, alongside other cyber security related facets.'
+                    description: '250 hours of learning SIEM tools, the NIST framework, exploring packet sniffers, utilizing Python for task automation, alongside other cybersecurity related facets.'
                 },
                 {
                     id: 'alchemy',
