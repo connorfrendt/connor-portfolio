@@ -98,7 +98,7 @@ export default {
                 {
                     id: 4,
                     title: "Playing Guitar, Piano, Ukulele, and the Drums",
-                    description: "I've been playing music sporadically througout my life.  I have a decent ear for being able to transpose a song from one instrument to the other!"
+                    description: "I've been playing music sporadically throughout my life.  I have a decent ear for being able to transpose a song from one instrument to the other!"
                 },
                 {
                     id: 5,
