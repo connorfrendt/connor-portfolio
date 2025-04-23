@@ -108,7 +108,7 @@ export default {
                 {
                     id: 6,
                     title: "Big Videogame Nerd!",
-                    description: "Pretty sure I was born with a controller in my hand.  Big into MMOs and RPGs, and I love me some strategic puzzle games."
+                    description: "Pretty sure I was born with a controller in my hand.  Big into MMOs and RPGs, and I love me some strategic puzzle games.  Also hugely in D&D and tabletop games.  I love being able to create a story with others - for the creativity, and the memories that comes with it is amazing."
                 },
             ]
         }
