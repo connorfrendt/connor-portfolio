@@ -54,6 +54,24 @@ export default {
         return {
             experience: [
                 {
+                    id: 7,
+                    title: 'Full Stack Developer',
+                    type: 'Part Time',
+                    company: 'DESI Telephone Labels',
+                    place: 'Fully Remote',
+                    duration: 'October 2024 - Present',
+                    description: 'Developed a web application to transition the company’s Windows only software, enabling cross-platform access to increase efficiency. Implemented user authentication via a custom built API, and extension-based phone label customization features.Created a user-friendly printing system that generates PDF’s by developing fast data storage and retrieval through RESTful APIs.'
+                },
+                {
+                    id: 6,
+                    title: 'Full Stack Developer',
+                    type: 'Part Time Contract',
+                    company: 'Open Function Computers',
+                    place: 'Fully Remote',
+                    duration: 'September 2024 - Present',
+                    description: 'Improved and maintained the KinderCare website, optimizing UX and functionality by using Javascript and PHP.'
+                },
+                {
                     id: 5,
                     title: 'Frontend Developer',
                     type: 'Part Time',
@@ -185,6 +203,10 @@ export default {
                         {
                             id: 'mdb',
                             skillName: 'Mongoose &\n MongoDB'
+                        },
+                        {
+                            id: 'pktbase',
+                            skillName: 'PocketBase'
                         }
                     ]
                 },
