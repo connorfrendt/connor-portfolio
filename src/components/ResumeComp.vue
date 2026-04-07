@@ -1,54 +1,85 @@
 <template>
-    <div id="resume">
+    <div class="resume-page">
 
-        <!-- <DownloadResume></DownloadResume> -->
-
-        <!--Experience-->
-        <div class="section">
-            <div class="list-bg-title"><b>EXPERIENCE</b></div>
-            <ul class="list-bg">
-                <li v-for="job in experience" :key="job.id" class="exp-and-schools-element">
-                    <div class="text-[25px]"><b>{{ job.title }}</b></div>
-                    <div><i>{{ job.company }}</i> - <i>{{ job.type }}</i></div>
-                    <div>{{ job.duration }} | {{ job.place }}</div>
-                    <div class="desc">{{ job.description }}</div>
-                </li>
-            </ul>
-        </div>
-        
-        <!--Technical Skills-->
-        <div class="section">
-            <div class="list-bg-title"><b>TECHNICAL SKILLS</b></div>
-            <ul class="list-bg" id="tech-skills-grid">
-                <li v-for="skill in techSkills" :key="skill.id" class="skills" id="tech-skill">
-                    <div>
-                        <div class="skill-title text-stone-400"><b>{{ skill.title.toUpperCase() }}</b></div>
-                        <ul v-for="skillName in skill.names" :key="skillName.id">
-                            <li class="skill-name">{{ skillName.skillName }}</li>
-                        </ul>
+        <!-- Experience -->
+        <section class="resume-section" v-animate>
+            <div class="section-header">
+                <span class="section-eyebrow">Work history</span>
+                <h2 class="section-heading">Experience</h2>
+            </div>
+            <ul class="timeline">
+                <li
+                    v-for="(job, index) in experience"
+                    :key="job.id"
+                    class="timeline-item glass"
+                    v-animate
+                    :data-animate-delay="index * 80"
+                >
+                    <div class="timeline-meta">
+                        <span class="timeline-duration">{{ job.duration }}</span>
+                        <span class="timeline-type">{{ job.type }}</span>
+                    </div>
+                    <div class="timeline-body">
+                        <div class="timeline-title">{{ job.title }}</div>
+                        <div class="timeline-company">{{ job.company }} &mdash; {{ job.place }}</div>
+                        <p class="timeline-desc">{{ job.description }}</p>
                     </div>
                 </li>
             </ul>
-        </div>
+        </section>
 
-        <!--Education-->
-        <div id="edu-section" class="section">
-            <div class="list-bg-title"><b>EDUCATION</b></div>
-            <ul id="education" class="list-bg">
-                <li v-for="school in schools" :key="school.id" class="exp-and-schools-element">
-                    <div class="school-program-title"><b>{{ school.program }}</b></div>
-                    <!-- <div><i>{{ school.gradDate }}</i></div> -->
-                    <div>{{ school.institution }} | {{ school.place }}</div>
-                    <div class="desc">{{ school.description }}</div>
+        <!-- Technical Skills -->
+        <section class="resume-section" v-animate>
+            <div class="section-header">
+                <span class="section-eyebrow">What I work with</span>
+                <h2 class="section-heading">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div
+                    v-for="(skill, index) in techSkills"
+                    :key="skill.id"
+                    class="skill-card glass"
+                    v-animate
+                    :data-animate-delay="index * 60"
+                >
+                    <div class="skill-card-title">{{ skill.title }}</div>
+                    <ul class="skill-list">
+                        <li v-for="s in skill.names" :key="s.id" class="skill-item">{{ s.skillName }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section" v-animate>
+            <div class="section-header">
+                <span class="section-eyebrow">Background</span>
+                <h2 class="section-heading">Education</h2>
+            </div>
+            <ul class="timeline">
+                <li
+                    v-for="(school, index) in schools"
+                    :key="school.id"
+                    class="timeline-item glass"
+                    v-animate
+                    :data-animate-delay="index * 80"
+                >
+                    <div class="timeline-meta">
+                        <span class="timeline-duration">{{ school.place }}</span>
+                    </div>
+                    <div class="timeline-body">
+                        <div class="timeline-title">{{ school.program }}</div>
+                        <div class="timeline-company">{{ school.institution }}</div>
+                        <p class="timeline-desc">{{ school.description }}</p>
+                    </div>
                 </li>
             </ul>
-        </div>
+        </section>
+
     </div>
 </template>
 
 <script>
-// import DownloadResume from './DownloadResume.vue';
-
 export default {
     data() {
         return {
@@ -59,8 +90,8 @@ export default {
                     type: 'Part Time',
                     company: 'DESI Telephone Labels',
                     place: 'Fully Remote',
-                    duration: 'October 2024 - Present',
-                    description: 'Developed a web application to transition the company’s Windows only software, enabling cross-platform access to increase efficiency. Implemented user authentication via a custom built API, and extension-based phone label customization features.Created a user-friendly printing system that generates PDF’s by developing fast data storage and retrieval through RESTful APIs.'
+                    duration: 'Oct 2024 – Present',
+                    description: 'Developed a web application to transition the company\'s Windows-only software to cross-platform access. Implemented user authentication via a custom-built API and extension-based phone label customization. Created a user-friendly printing system that generates PDFs through RESTful APIs.'
                 },
                 {
                     id: 6,
@@ -68,8 +99,8 @@ export default {
                     type: 'Part Time Contract',
                     company: 'Open Function Computers',
                     place: 'Fully Remote',
-                    duration: 'September 2024 - Present',
-                    description: 'Improved and maintained the KinderCare website, optimizing UX and functionality by using Javascript and PHP.'
+                    duration: 'Sep 2024 – Present',
+                    description: 'Improved and maintained the KinderCare website, optimizing UX and functionality using JavaScript and PHP.'
                 },
                 {
                     id: 5,
@@ -77,8 +108,8 @@ export default {
                     type: 'Part Time',
                     company: 'Bridgesense',
                     place: 'Fully Remote',
-                    duration: 'December 2022 - February 2023',
-                    description: 'Built 2 websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, & Peek API.'
+                    duration: 'Dec 2022 – Feb 2023',
+                    description: 'Built 2 websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, and Peek API.'
                 },
                 {
                     id: 4,
@@ -86,8 +117,8 @@ export default {
                     type: 'Full Time',
                     company: 'Novacoast',
                     place: 'Fully Remote',
-                    duration: 'May 2022 - August 2022',
-                    description: 'Was in the process of learning and using TypeScript and Composition API within the Vue framework to redesign the internal portal.'
+                    duration: 'May 2022 – Aug 2022',
+                    description: 'Learning and using TypeScript and Composition API within Vue to redesign the internal portal.'
                 },
                 {
                     id: 3,
@@ -95,17 +126,17 @@ export default {
                     type: 'Contract',
                     company: 'Vetsource',
                     place: 'Portland, OR',
-                    duration: 'October 2021 - December 2021',
-                    description: 'Called 5 - 10 veterinary practices per day, I used Salesforce to keep the data up to date for those practices, and I sent out documents via Salesforce & Docusign.'
+                    duration: 'Oct 2021 – Dec 2021',
+                    description: 'Called 5–10 veterinary practices per day, maintained data in Salesforce, and sent documents via Salesforce and DocuSign.'
                 },
                 {
                     id: 2,
-                    title: 'Database/Software Developer',
+                    title: 'Database / Software Developer',
                     type: 'Full Time',
                     company: 'Pollinate',
                     place: 'Portland, OR',
-                    duration: 'December 2019 - August 2020',
-                    description: 'As a Database Developer, I was transitioning to a Software Engineer within the company.  I assisted with software development projects for clients (e.g. Carhartt, Life is Good), as well as maintained their databases.  I was responsible for making data that\'s human readable to get output to the front-end. I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.'
+                    duration: 'Dec 2019 – Aug 2020',
+                    description: 'Transitioned from Database Developer to Software Engineer. Assisted with projects for clients including Carhartt and Life is Good. Responsible for making data human-readable for front-end output across 100+ Under Armour garments per month.'
                 },
                 {
                     id: 1,
@@ -113,8 +144,8 @@ export default {
                     type: 'Contract',
                     company: 'Pollinate',
                     place: 'Portland, OR',
-                    duration: 'June 2019 - December 2019',
-                    description: 'As a Database Developer, I got to learn the interrelations of all of Pollinate\'s databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.'
+                    duration: 'Jun 2019 – Dec 2019',
+                    description: 'Learned the interrelations of all Pollinate databases, expanded SQL knowledge, and assisted with data for Under Armour garments.'
                 }
             ],
             techSkills: [
@@ -122,192 +153,84 @@ export default {
                     id: 'languages',
                     title: 'Languages',
                     names: [
-                        {
-                            id: 'html',
-                            skillName: 'HTML',
-                        },
-                        {
-                            id: 'css',
-                            skillName: 'CSS'
-                        },
-                        {
-                            id: 'js',
-                            skillName: 'JavaScript'
-                        },
-                        {
-                            id: 'python',
-                            skillName: 'Python'
-                        },
-                        {
-                            id: 'sql',
-                            skillName: 'SQL'
-                        }
+                        { id: 'html', skillName: 'HTML' },
+                        { id: 'css', skillName: 'CSS' },
+                        { id: 'js', skillName: 'JavaScript' },
+                        { id: 'python', skillName: 'Python' },
+                        { id: 'sql', skillName: 'SQL' }
                     ]
                 },
                 {
                     id: 'front-end',
                     title: 'Front End',
                     names: [
-                        {
-                            id: 'vanillajs',
-                            skillName: 'VanillaJS'
-                        },
-                        {
-                            id: 'vjs',
-                            skillName: 'VueJS'
-                        },
-                        {
-                            id: 'grid',
-                            skillName: 'CSS Grid'
-                        },
-                        {
-                            id: 'flex',
-                            skillName: 'CSS Flexbox'
-                        },
-                        {
-                            id: 'tailwind',
-                            skillName: 'Tailwind CSS'
-                        },
-                        {
-                            id: 'bootstrap',
-                            skillName: 'Bootstrap'
-                        },
+                        { id: 'vanillajs', skillName: 'VanillaJS' },
+                        { id: 'vjs', skillName: 'VueJS' },
+                        { id: 'grid', skillName: 'CSS Grid' },
+                        { id: 'flex', skillName: 'CSS Flexbox' },
+                        { id: 'tailwind', skillName: 'Tailwind CSS' },
+                        { id: 'bootstrap', skillName: 'Bootstrap' },
                     ]
                 },
                 {
                     id: 'back-end',
                     title: 'Back End',
                     names: [
-                        {
-                            id: 'node',
-                            skillName: 'NodeJS'
-                        },
-                        {
-                            id: 'express',
-                            skillName: 'ExpressJS'
-                        }
+                        { id: 'node', skillName: 'NodeJS' },
+                        { id: 'express', skillName: 'ExpressJS' }
                     ]
                 },
                 {
                     id: 'databases',
                     title: 'Databases',
                     names: [
-                        {
-                            id: 'sql',
-                            skillName: 'SQL'
-                        },
-                        {
-                            id: 'psql',
-                            skillName: 'PostgreSQL'
-                        },
-                        {
-                            id: 'mdb',
-                            skillName: 'Mongoose &\n MongoDB'
-                        },
-                        {
-                            id: 'pktbase',
-                            skillName: 'PocketBase'
-                        }
+                        { id: 'sql', skillName: 'SQL' },
+                        { id: 'psql', skillName: 'PostgreSQL' },
+                        { id: 'mdb', skillName: 'MongoDB / Mongoose' },
+                        { id: 'pktbase', skillName: 'PocketBase' }
                     ]
                 },
                 {
                     id: 'testing-suites',
                     title: 'Testing',
                     names: [
-                        {
-                            id: 'jest',
-                            skillName: 'Jest'
-                        },
-                        {
-                            id: 'tdd',
-                            skillName: 'Test Driven Development'
-                        }
+                        { id: 'jest', skillName: 'Jest' },
+                        { id: 'tdd', skillName: 'Test Driven Development' }
                     ]
                 },
                 {
                     id: 'tools',
                     title: 'Tools',
                     names: [
-                        {
-                            id: 'git',
-                            skillName: 'Git'
-                        },
-                        {
-                            id: 'github',
-                            skillName: 'GitHub'
-                        },
-                        {
-                            id: 'heroku',
-                            skillName: 'Heroku'
-                        },
-                        {
-                            id: 'pman',
-                            skillName: 'Postman'
-                        },
-                        {
-                            id: 'slack',
-                            skillName: 'Slack'
-                        },
-                        {
-                            id: 'jira',
-                            skillName: 'Jira'
-                        },
-                        {
-                            id: 'atlassian',
-                            skillName: 'Atlassian'
-                        },
-                        {
-                            id: 'bb',
-                            skillName: 'BitBucket'
-                        },
-                        {
-                            id: 'sf',
-                            skillName: 'Salesforce'
-                        },
+                        { id: 'git', skillName: 'Git' },
+                        { id: 'github', skillName: 'GitHub' },
+                        { id: 'heroku', skillName: 'Heroku' },
+                        { id: 'pman', skillName: 'Postman' },
+                        { id: 'slack', skillName: 'Slack' },
+                        { id: 'jira', skillName: 'Jira' },
+                        { id: 'atlassian', skillName: 'Atlassian' },
+                        { id: 'bb', skillName: 'BitBucket' },
+                        { id: 'sf', skillName: 'Salesforce' },
                     ]
                 },
                 {
                     id: 'other',
                     title: 'Other',
                     names: [
-                        {
-                            id: 'api',
-                            skillName: 'RESTful APIs'
-                        },
-                        {
-                            id: 'rwb',
-                            skillName: 'Responsive Web Design'
-                        },
-                        {
-                            id: 'agile',
-                            skillName: 'Agile'
-                        },
-                        {
-                            id: 'oauth',
-                            skillName: 'OAuth'
-                        },
-                        {
-                            id: 'jwt',
-                            skillName: 'JSON Web Token'
-                        },
+                        { id: 'api', skillName: 'RESTful APIs' },
+                        { id: 'rwb', skillName: 'Responsive Web Design' },
+                        { id: 'agile', skillName: 'Agile' },
+                        { id: 'oauth', skillName: 'OAuth' },
+                        { id: 'jwt', skillName: 'JSON Web Token' },
                     ]
                 },
                 {
                     id: 'os',
                     title: 'OS',
                     names: [
-                        {
-                            id: 'windows',
-                            skillName: 'Windows'
-                        },
-                        {
-                            id: 'mac',
-                            skillName: 'MacOS'
-                        },
-                        {
-                            id: 'linux',
-                            skillName: 'Linux'
-                        }
+                        { id: 'windows', skillName: 'Windows' },
+                        { id: 'mac', skillName: 'MacOS' },
+                        { id: 'linux', skillName: 'Linux' }
                     ]
                 }
             ],
@@ -317,124 +240,225 @@ export default {
                     institution: 'Google',
                     program: 'Google Cybersecurity Program',
                     place: 'Remote',
-                    description: '250 hours of learning SIEM tools, the NIST framework, exploring packet sniffers, utilizing Python for task automation, alongside other cybersecurity related facets.'
+                    description: '250 hours covering SIEM tools, the NIST framework, packet sniffers, Python task automation, and other cybersecurity fundamentals.'
                 },
                 {
                     id: 'alchemy',
                     institution: 'Alchemy Code Lab',
                     program: 'Full Stack Software Engineering',
                     place: 'Portland, OR',
-                    description: '5-6 months of 60-70 hour work weeks learning Full Stack JavaScript'
+                    description: '5–6 months of 60–70 hour work weeks learning Full Stack JavaScript end to end.'
                 },
                 {
                     id: 'wwu',
                     institution: 'Western Washington University',
                     program: 'B.S. in Mathematics',
                     place: 'Bellingham, WA',
-                    description: '5 years of single and multivariable calculus, with linear algebra, systems of partial differential equations, and forier analysis.'
+                    description: '5 years of single and multivariable calculus, linear algebra, systems of partial differential equations, and Fourier analysis.'
                 }
             ]
         }
     },
-
-    components: {
-        // DownloadResume
+    mounted() {
+        this.$nextTick(() => {
+            this.$el.querySelectorAll('[data-animate-delay]').forEach(el => {
+                const delay = el.getAttribute('data-animate-delay');
+                if (delay) el.style.transitionDelay = delay + 'ms';
+            });
+        });
     }
 }
 </script>
 
 <style scoped>
-#resume {
+.resume-page {
     color: white;
+    padding: 60px 24px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.section {
-    padding: 10px;
-}
-.list-bg-title {
-    border-radius: 5px;
-    background-color: rgb(120 113 108);
-    padding: 10px;
-    text-align: center;
-    letter-spacing: 2px;
-}
-.list-bg {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+/* ── Section ── */
+.resume-section {
+    margin-bottom: 72px;
 }
 
-#tech-skills-grid {
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(120, 113, 108);
+    margin-bottom: 6px;
+}
+
+.section-heading {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* ── Timeline ── */
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.timeline-item {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease;
 }
 
-.exp-and-schools-element {
-    background-color: rgb(55, 65, 81);
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 5px;
+.timeline-item:hover {
+    transform: translateX(4px);
 }
 
-.desc {
-    color: rgb(156, 163, 175);
+.timeline-meta {
+    padding: 24px 20px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(120, 113, 108, 0.06);
 }
 
-.skills {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: rgb(55, 65, 81);
+.timeline-duration {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
 }
-.skill-title {
+
+.timeline-type {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(120, 113, 108, 0.8);
+    border: 1px solid rgba(120, 113, 108, 0.3);
+    padding: 2px 8px;
+    border-radius: 100px;
+    width: fit-content;
+}
+
+.timeline-body {
+    padding: 24px 28px;
+}
+
+.timeline-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.timeline-company {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ── Skills grid ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.skill-card {
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.08);
+}
+
+.skill-card-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(120, 113, 108);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-item {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
     text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid white;
-    letter-spacing: 2px;
-    font-size: 20px;
-}
-.skill-name {
-    padding: 15px;
-    text-align: center;
-    font-size: 16.5px;
 }
 
-.school-program-title {
-    font-size: 22px;
-}
-
-#edu-section {
-    padding-bottom: 12px;
-}
-
-
-@media screen and (max-width: 1523px) {
-    #tech-skills-grid {
-        grid-template-columns: repeat(4, 1fr);
+/* ── Responsive ── */
+@media screen and (max-width: 700px) {
+    .resume-page {
+        padding: 40px 16px 60px;
     }
-}
 
-@media screen and (max-width: 1000px) {
-    .section {
-        margin: 12px 0; /*NS EW*/
+    .timeline-item {
+        grid-template-columns: 1fr;
     }
-    #tech-skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-@media screen and (max-width: 767px) {
-    #tech-skills-grid {
+    .timeline-meta {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 14px 20px;
+    }
+
+    .timeline-body {
+        padding: 16px 20px 20px;
+    }
+
+    .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 500px) {
-    #tech-skills-grid {
+@media screen and (max-width: 400px) {
+    .skills-grid {
         grid-template-columns: 1fr;
-    }
-
-    .skill-name{
-        font-size: 20px;
     }
 }
 </style>

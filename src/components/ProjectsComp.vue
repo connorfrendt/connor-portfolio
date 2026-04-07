@@ -1,85 +1,76 @@
 <template>
-    <div>
-        <div id="wrapper">
-            <!-- Websites-->
-            <div class="section">
-                <div class="section-title">WEBSITES</div>
-                <div>
-                    <ul class="website-grid">
-                        <li v-for="website in websites" :key="website.id" class="proj-div">
-                            <div class="proj-container">
-                                <a class="" :href="website.link" target="_blank">
-                                    <div class="img-container">
-                                        <img :src="website.img" class="proj-img" />
-                                    </div>
-                                </a>
-                                <div class="proj-text">
-                                    <div class="proj-desc-tech">
-                                        <div class="proj-title">
-                                            <div class="proj-title-container">
-                                                <a :href="website.link" target="_blank">
-                                                    {{ website.title }}
-                                                    <font-awesome-icon class="pop-out-btn" icon="fa-solid fa-up-right-from-square" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="proj-desc">{{ website.description }}</div>
-                                    </div>
-                                    <div class="proj-desc-tech tech-used-div">
-                                        <div class="tech-title">TECHNOLOGIES USED:</div>
-                                        <ul>
-                                            <li v-for="language in website.tech" :key="language.id" class="tech-used">
-                                                {{ language.name }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="projects-page">
 
-            <!--Projects-->
-            <div class="section">
-                <div class="section-title">PERSONAL PROJECTS</div>
-                <div>
-                    <ul class="website-grid">
-                        <li v-for="project in projects" :key="project.id" class="proj-div">
-                            <div class="proj-container">
-                                <a class="website-grid" :href="project.link" target="_blank">
-                                    <div class="img-container">
-                                        <img :src="project.img" class="proj-img" />
-                                    </div>
-                                </a>
-                                <div class="proj-text">
-                                    <div class="proj-desc-tech">
-                                        <div class="proj-title">
-                                            <div class="proj-title-container">
-                                                <a :href="project.link" target="_blank">
-                                                    {{ project.title }}
-                                                    <font-awesome-icon class="pop-out-btn" icon="fa-solid fa-up-right-from-square" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="proj-desc">{{ project.description }}</div>
-                                    </div>
-                                    <div class="proj-desc-tech tech-used-div">
-                                        <div class="tech-title">TECHNOLOGIES USED:</div>
-                                        <ul>
-                                            <li v-for="language in project.tech" :key="language.id" class="tech-used">
-                                                {{ language.name }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Websites -->
+        <section class="projects-section" v-animate>
+            <div class="section-header">
+                <span class="section-eyebrow">Live work</span>
+                <h2 class="section-heading">Websites</h2>
             </div>
+            <ul class="projects-list">
+                <li
+                    v-for="(website, index) in websites"
+                    :key="website.id"
+                    class="project-card glass"
+                    v-animate
+                    :data-animate-delay="index * 120"
+                >
+                    <a :href="website.link" target="_blank" rel="noopener noreferrer" class="project-img-wrap">
+                        <img :src="website.img" :alt="website.title" class="project-img" />
+                        <div class="project-img-overlay">
+                            <font-awesome-icon icon="fa-solid fa-up-right-from-square" class="overlay-icon" />
+                        </div>
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top">
+                            <a :href="website.link" target="_blank" rel="noopener noreferrer" class="project-title">
+                                {{ website.title }}
+                            </a>
+                            <p class="project-desc">{{ website.description }}</p>
+                        </div>
+                        <div class="project-tech">
+                            <span v-for="lang in website.tech" :key="lang.id" class="tech-tag">{{ lang.name }}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-        </div>
+        <!-- Personal Projects -->
+        <section class="projects-section" v-animate>
+            <div class="section-header">
+                <span class="section-eyebrow">Side work</span>
+                <h2 class="section-heading">Personal Projects</h2>
+            </div>
+            <ul class="projects-list">
+                <li
+                    v-for="(project, index) in projects"
+                    :key="project.id"
+                    class="project-card glass"
+                    v-animate
+                    :data-animate-delay="index * 120"
+                >
+                    <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-img-wrap">
+                        <img :src="project.img" :alt="project.title" class="project-img" />
+                        <div class="project-img-overlay">
+                            <font-awesome-icon icon="fa-solid fa-up-right-from-square" class="overlay-icon" />
+                        </div>
+                    </a>
+                    <div class="project-body">
+                        <div class="project-top">
+                            <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-title">
+                                {{ project.title }}
+                            </a>
+                            <p class="project-desc">{{ project.description }}</p>
+                        </div>
+                        <div class="project-tech">
+                            <span v-for="lang in project.tech" :key="lang.id" class="tech-tag">{{ lang.name }}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
     </div>
 </template>
 
@@ -100,18 +91,9 @@ export default {
                     link: "https://seaestacabo.com/",
                     description: 'A luxury, private catamaran touring website, letting people book tours.',
                     tech: [
-                        {
-                            id: 'html',
-                            name: 'HTML'
-                        },
-                        {
-                            id: 'css',
-                            name: 'TailwindCSS'
-                        },
-                        {
-                            id: 'peek',
-                            name: 'Peek API'
-                        }
+                        { id: 'html', name: 'HTML' },
+                        { id: 'css', name: 'TailwindCSS' },
+                        { id: 'peek', name: 'Peek API' }
                     ]
                 },
                 {
@@ -121,18 +103,9 @@ export default {
                     link: "https://lagringacabo.com/",
                     description: 'A powered catamaran tour, with whale watching, snorkeling, and sunset tours.',
                     tech: [
-                        {
-                            id: 'html',
-                            name: 'HTML'
-                        },
-                        {
-                            id: 'css',
-                            name: 'TailwindCSS'
-                        },
-                        {
-                            id: 'peek',
-                            name: 'Peek API'
-                        }
+                        { id: 'html', name: 'HTML' },
+                        { id: 'css', name: 'TailwindCSS' },
+                        { id: 'peek', name: 'Peek API' }
                     ]
                 }
             ],
@@ -142,24 +115,12 @@ export default {
                     img: pokeLogo,
                     title: 'Pokédex',
                     link: "https://return-of-pokedex.netlify.app",
-                    description: 'A front-end Pokedex application with a psuedo-API and a filter to search for any Pokemon that fits within the given criteria.',
+                    description: 'A front-end Pokédex with a pseudo-API and filter to search any Pokémon by criteria.',
                     tech: [
-                        {
-                            id: 'html',
-                            name: 'HTML'
-                        },
-                        {
-                            id: 'css',
-                            name: 'CSS'
-                        },
-                        {
-                            id: 'api',
-                            name: 'Simulated API'
-                        },
-                        {
-                            id: 'vue',
-                            name: 'VueJS'
-                        }
+                        { id: 'html', name: 'HTML' },
+                        { id: 'css', name: 'CSS' },
+                        { id: 'api', name: 'Simulated API' },
+                        { id: 'vue', name: 'VueJS' }
                     ]
                 },
                 {
@@ -167,182 +128,196 @@ export default {
                     img: dogPic,
                     title: 'Dog Picture Gallery',
                     link: "https://doggypics.netlify.app/#/",
-                    description: 'A front-end single page image application with a self-made API that can upload pictures to a specified album.  Uses local storage as a database to manage album/picture data.',
+                    description: 'A SPA image gallery with a self-made API for uploading to albums. Uses localStorage as the database.',
                     tech: [
-                    {
-                            id: 'html',
-                            name: 'HTML'
-                        },
-                        {
-                            id: 'css',
-                            name: 'CSS'
-                        },
-                        {
-                            id: 'api',
-                            name: 'Self-made image API'
-                        },
-                        {
-                            id: 'vue',
-                            name: 'VueJS'
-                        }
+                        { id: 'html', name: 'HTML' },
+                        { id: 'css', name: 'CSS' },
+                        { id: 'api', name: 'Self-made API' },
+                        { id: 'vue', name: 'VueJS' }
                     ]
                 }
             ]
         }
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.$el.querySelectorAll('[data-animate-delay]').forEach(el => {
+                const delay = el.getAttribute('data-animate-delay');
+                if (delay) el.style.transitionDelay = delay + 'ms';
+            });
+        });
     }
-
 }
 </script>
 
 <style scoped>
-#wrapper {
-    width: 100%;
+.projects-page {
+    padding: 60px 24px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.section {
-    padding: 10px;
+/* ── Section ── */
+.projects-section {
+    margin-bottom: 72px;
 }
 
-.section-title {
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(120, 113, 108);
+    margin-bottom: 6px;
+}
+
+.section-heading {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
     color: white;
-    text-align: center;
-    background-color: rgb(120 113 108);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    letter-spacing: 2px;
-    font-weight: bold;
+    margin: 0;
+    line-height: 1.1;
 }
 
-.website-grid {
-    text-align: center;
+/* ── Projects list ── */
+.projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.proj-div {
-    margin: 20px 0;
-}
-
-.proj-container {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    border-radius: 5px;
-}
-
-.proj-text {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
-.proj-title-container {
-    position: relative;
-    text-align: center;
-}
-
-.proj-title {
-    color: rgb(120 113 108);
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-    display: inline-block;
-}
-
-.pop-out-btn {
-    font-size: 15px;
-    position: absolute;
-    top: 0;
-    right: -20px;
-}
-
-.proj-desc {
-    color: white;
-    min-height: 48px;
-}
-
-.img-container {
+/* ── Project card ── */
+.project-card {
+    border-radius: 16px;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.proj-img {
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* Image */
+.project-img-wrap {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    aspect-ratio: 16 / 10;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.25s ease;
+    transition: transform 0.4s ease;
+    display: block;
 }
 
-.proj-img:hover {
-    transform: scale(1.2);
+.project-card:hover .project-img {
+    transform: scale(1.06);
 }
 
-.proj-desc-tech {
-    background-color: rgb(55, 65, 81);
-    padding: 20px;
+.project-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.tech-title {
-    color: rgb(168 162 158);
-    font-weight: bold;
-    border-bottom: 1px solid white;
+.project-img-wrap:hover .project-img-overlay {
+    opacity: 1;
 }
 
-
-
-.tech-used {
+.overlay-icon {
+    font-size: 28px;
     color: white;
-    padding: 10px;
 }
 
-@media screen and (min-width: 1071px) {
-    .proj-img {
-        height: 300px;
-    }
-    .img-container {
-        min-width: 400px;
-    }
-    .tech-used-div {
-        margin-left: 5px;
-    }
+/* Body */
+.project-body {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-@media screen and (max-width: 1070px) {
-    #wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .section {
-        max-width: 500px;
-    }
-    .proj-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .proj-title {
-        font-size: 45px;
-    }
-    .proj-text {
-        display: flex;
-        flex-direction: column;
-    }
-    .tech-used-div {
-        margin-top: 5px;
-    }
-
+.project-title {
+    display: inline-block;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
 }
 
+.project-title:hover {
+    color: rgb(120, 113, 108);
+}
+
+.project-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+    font-weight: 300;
+    margin: 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+/* ── Responsive ── */
 @media screen and (max-width: 900px) {
-    .proj-container {
-        margin: 10px 0; /*Top/Bottom Left/Right */
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-img-wrap {
+        aspect-ratio: 16 / 7;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .img-container {
-        width: 100%;
+    .projects-page {
+        padding: 40px 16px 60px;
     }
-}
 
-@media screen and (max-width: 500px) {
-    .proj-title {
-        font-size: 30px;
+    .project-img-wrap {
+        aspect-ratio: 16 / 8;
+    }
+
+    .project-body {
+        padding: 20px;
     }
 }
 </style>

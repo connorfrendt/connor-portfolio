@@ -1,64 +1,56 @@
 <template>
     <div>
-        <!--Header-->
-        <div class="z-10 box-shadow flex bg-gray-700 text-white fixed top-0 w-full sm:max-md:hidden">
-            <RouterLink to="/" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">HOME</RouterLink>
-            <RouterLink to="/resume" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">RESUME</RouterLink>
-            <RouterLink to="/projects" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">PROJECTS</RouterLink>
-            <RouterLink to="/aboutme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150 border-cls">ABOUT ME</RouterLink>
-            
-            <div class="flex items-center ml-auto">
-                <RouterLink to="/contactme" class="header-btn p-[10px] hover:bg-stone-500 ease-in duration-150">Contact Me</RouterLink>
-
-                <div id="linkedin" class="socials hover:bg-[#0077b5] ease-in duration-150">
-                    <a class="social-links" href="https://www.linkedin.com/in/connorfrendt" target="_blank">
-                        <font-awesome-icon icon="fa-brands fa-linkedin" />
-                    </a>
+        <!--Desktop Header-->
+        <nav class="header-nav z-10 fixed top-0 w-full sm:max-md:hidden">
+            <div class="header-inner">
+                <div class="nav-links">
+                    <RouterLink to="/" class="nav-link" exact-active-class="nav-link--active">Home</RouterLink>
+                    <RouterLink to="/resume" class="nav-link" active-class="nav-link--active">Resume</RouterLink>
+                    <RouterLink to="/projects" class="nav-link" active-class="nav-link--active">Projects</RouterLink>
+                    <RouterLink to="/aboutme" class="nav-link" active-class="nav-link--active">About Me</RouterLink>
                 </div>
 
-                <div id="github" class="socials hover:bg-black ease-in duration-150">
-                    <a class="social-links" href="https://www.github.com/connorfrendt" target="_blank">
+                <div class="nav-right">
+                    <RouterLink to="/contactme" class="contact-btn" active-class="contact-btn--active">Contact Me</RouterLink>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/connorfrendt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <font-awesome-icon icon="fa-brands fa-linkedin" />
+                    </a>
+                    <a class="social-link" href="https://www.github.com/connorfrendt" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <font-awesome-icon icon="fa-brands fa-github" />
                     </a>
                 </div>
             </div>
-        </div>
-    
+        </nav>
+
         <!--Mobile Header-->
-        <div class="md:hidden fixed top-0 w-full box-shadow z-10" ref="mobileHeader">
-            <div class="w-full bg-gray-700 text-center relative">
-                <button @click="open = !open" class="p-[12px] w-full text-gray-400">
-                    <font-awesome-icon icon="fa-solid fa-bars" class="pr-[10px]" />
-                    <font-awesome-icon icon="fa-solid fa-caret-down" v-if="!open" />
-                    <font-awesome-icon icon="fa-solid fa-caret-up" v-if="open" />
+        <div class="mobile-header md:hidden fixed top-0 w-full z-10" ref="mobileHeader">
+            <div class="mobile-bar">
+                <button @click="open = !open" class="mobile-toggle" aria-label="Toggle menu">
+                    <font-awesome-icon icon="fa-solid fa-bars" />
+                    <font-awesome-icon :icon="open ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'" class="ml-2" />
                 </button>
-    
-                <div v-if="open" class="w-full text-white absolute bg-gray-700 box-shadow">
-                    <RouterLink to="/"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">HOME</div></RouterLink>
-                    <RouterLink to="/resume"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">RESUME</div></RouterLink>
-                    <RouterLink to="/projects"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">PROJECTS</div></RouterLink>
-                    <RouterLink to="/aboutme"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">ABOUT ME</div></RouterLink>
-                    <RouterLink to="/contactme"><div @click="open = !open" class="p-[10px] m-[10px] bg-stone-500 rounded-[5px]">CONTACT ME</div></RouterLink>
-                    
-                    <div class="flex justify-center">
-                        <div id="linkedin" class="socials-mobile">
-                            <a class="social-links" href="https://www.linkedin.com/in/connorfrendt" target="_blank">
-                                <font-awesome-icon icon="fa-brands fa-linkedin" />
-                            </a>
-                        </div>
-                        <div id="github" class="socials-mobile">
-                            <a class="social-links" href="https://www.github.com/connorfrendt" target="_blank">
-                                <font-awesome-icon icon="fa-brands fa-github" />
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
-        </div>
-        
 
+            <transition name="menu-slide">
+                <div v-if="open" class="mobile-menu">
+                    <RouterLink to="/" exact-active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Home</RouterLink>
+                    <RouterLink to="/resume" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Resume</RouterLink>
+                    <RouterLink to="/projects" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Projects</RouterLink>
+                    <RouterLink to="/aboutme" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">About Me</RouterLink>
+                    <RouterLink to="/contactme" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Contact Me</RouterLink>
+
+                    <div class="mobile-socials">
+                        <a class="social-link" href="https://www.linkedin.com/in/connorfrendt" target="_blank" rel="noopener noreferrer">
+                            <font-awesome-icon icon="fa-brands fa-linkedin" />
+                        </a>
+                        <a class="social-link" href="https://www.github.com/connorfrendt" target="_blank" rel="noopener noreferrer">
+                            <font-awesome-icon icon="fa-brands fa-github" />
+                        </a>
+                    </div>
+                </div>
+            </transition>
+        </div>
     </div>
 </template>
 
@@ -70,19 +62,15 @@ export default {
         }
     },
     mounted() {
-        // Add a click event listener to the document
-        document.addEventListener("click", this.handleDocumentClick);
+        document.addEventListener('click', this.handleDocumentClick);
     },
     beforeDestroy() {
-        // Remove the click event listener when the component is destroyed
-        document.removeEventListener("click", this.handleDocumentClick);
+        document.removeEventListener('click', this.handleDocumentClick);
     },
     methods: {
         handleDocumentClick(event) {
-            // Check if the click occured outide of the mobile header
-            const mobileHeader = this.$refs.mobileHeader
-            
-            if(this.open && mobileHeader && !mobileHeader.contains(event.target)) {
+            const mobileHeader = this.$refs.mobileHeader;
+            if (this.open && mobileHeader && !mobileHeader.contains(event.target)) {
                 this.open = false;
             }
         }
@@ -91,35 +79,175 @@ export default {
 </script>
 
 <style scoped>
-.socials {
-    font-size: 30px;
+.header-nav {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.socials-mobile {
-    margin-top: 20px;
-    font-size: 25px;
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 64px;
 }
 
-#linkedin {
-    border-right: 1px solid gray;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
-
-.social-links {
-    color: lightgray;
-    padding: 0 15px;
-}
-
-.social-links:visited,
-.social-links:active {
+.nav-link {
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+    position: relative;
 }
 
-.box-shadow {
-    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+.nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
 }
 
-.border-cls {
-    border-left: 2px solid rgb(31, 41, 55);
+.nav-link--active {
+    color: white !important;
+}
+
+.nav-link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: rgb(120, 113, 108);
+    border-radius: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-btn {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(120, 113, 108, 0.4);
+    transition: all 0.2s ease;
+    margin-right: 8px;
+}
+
+.contact-btn:hover,
+.contact-btn--active {
+    background: rgba(120, 113, 108, 0.2);
+    border-color: rgba(120, 113, 108, 0.7);
+    color: white;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Mobile */
+.mobile-header {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-bar {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-toggle {
+    width: 100%;
+    padding: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.mobile-toggle:hover {
+    color: white;
+}
+
+.mobile-menu {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 8px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.mobile-link--active {
+    color: white !important;
+    background: rgba(120, 113, 108, 0.2) !important;
+}
+
+.mobile-socials {
+    display: flex;
+    gap: 4px;
+    padding: 8px 4px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 8px;
+}
+
+/* Menu slide transition */
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.menu-slide-enter,
+.menu-slide-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
 }
 </style>

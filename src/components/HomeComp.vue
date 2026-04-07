@@ -1,69 +1,68 @@
 <template>
     <div id="home">
-        <div id="home-body">
-
-            <div id="pic-title">
-                <div>
-                    <img src="../assets/img/pfp.jpg" class="picture" />
-                </div>
-                
-                <div id="title-bg">
-                    <div id="name"><b>CONNOR FRENDT</b></div>
-                    <div class="title">
-                        <div>FULL STACK</div>
-                        <div>JAVASCRIPT DEVELOPER</div>
+        <!-- Hero -->
+        <div id="hero">
+            <div id="hero-content" v-animate>
+                <img src="../assets/img/pfp.jpg" class="hero-photo" alt="Connor Frendt" />
+                <div id="hero-text">
+                    <div id="hero-name">Connor Frendt</div>
+                    <div id="hero-title">Full Stack JavaScript Developer</div>
+                    <div id="hero-sub">Building clean, performant web experiences.</div>
+                    <div id="hero-actions">
+                        <RouterLink to="/projects" class="hero-btn hero-btn--primary">View Projects</RouterLink>
+                        <RouterLink to="/resume" class="hero-btn hero-btn--secondary">Résumé</RouterLink>
                     </div>
                 </div>
-                
             </div>
-            
-            <div id="parallax-one" class="parallax" v-if="desktop"></div>
-            <div id="para-one-sub" class="para-sub" v-if="mobile"></div>
-
-            <div class="text-white projects-div">
-                <div class="proj-wrapper">
-                    <div class="proj-title">Projects?</div>
-                    <RouterLink to="/projects">
-                        <div class="proj-sub-text">
-                            <div>Let's &lt;div&gt; into the code!</div>
-                            <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
-                        </div>
-                    </RouterLink>
-                </div>
-            </div>
-
-            <div id="parallax-two" class="parallax" v-if="desktop"></div>
-            <div id="para-two-sub" class="para-sub" v-if="mobile"></div>
-
-            <div class="text-white resume-div">
-                <div class="resume-wrapper">
-                    <div>You can "resume"</div>
-                    <div>looking at my</div>
-                    <RouterLink to="/resume">
-                        <div class="resume-link">
-                            <span>résumé</span>
-                            <font-awesome-icon class="arrow" icon="fa-solid fa-arrow-right" beat />
-                        </div>
-                    </RouterLink>
-                </div>
-                
-            </div>
-
-            <div id="parallax-three" class="parallax" v-if="desktop"></div>
-            <div id="para-three-sub" class="para-sub" v-if="mobile"></div>
-
-            <div id="quote">
-                <font-awesome-icon icon="fa-solid fa-quote-left" id="quote-left"/>
-                <i>
-                    There are 10 types of people in the world -
-                    <br />
-                    those that understand binary, and those that don't.
-                </i>
-                <font-awesome-icon icon="fa-solid fa-quote-right" id="quote-right" />
-            </div>
-            
         </div>
 
+        <!-- Parallax 1 -->
+        <div id="parallax-one" class="parallax" v-if="desktop"></div>
+        <div id="para-one-sub" class="para-sub" v-if="mobile"></div>
+
+        <!-- Projects CTA -->
+        <div class="cta-section">
+            <div class="cta-inner" v-animate>
+                <div class="cta-label">Explore</div>
+                <div class="cta-heading">Projects</div>
+                <p class="cta-desc">A collection of websites and apps I've built — real clients, real code.</p>
+                <RouterLink to="/projects" class="cta-link">
+                    Let's &lt;div&gt; into the code
+                    <font-awesome-icon class="cta-arrow" icon="fa-solid fa-arrow-right" />
+                </RouterLink>
+            </div>
+        </div>
+
+        <!-- Parallax 2 -->
+        <div id="parallax-two" class="parallax" v-if="desktop"></div>
+        <div id="para-two-sub" class="para-sub" v-if="mobile"></div>
+
+        <!-- Resume CTA -->
+        <div class="cta-section cta-section--right">
+            <div class="cta-inner cta-inner--right" v-animate>
+                <div class="cta-label">Career</div>
+                <div class="cta-heading">Résumé</div>
+                <p class="cta-desc">Experience, skills, and education — all in one place.</p>
+                <RouterLink to="/resume" class="cta-link">
+                    You can "resume" looking
+                    <font-awesome-icon class="cta-arrow" icon="fa-solid fa-arrow-right" />
+                </RouterLink>
+            </div>
+        </div>
+
+        <!-- Parallax 3 -->
+        <div id="parallax-three" class="parallax" v-if="desktop"></div>
+        <div id="para-three-sub" class="para-sub" v-if="mobile"></div>
+
+        <!-- Quote -->
+        <div id="quote" v-animate>
+            <font-awesome-icon icon="fa-solid fa-quote-left" class="quote-icon quote-icon--left" />
+            <p id="quote-text">
+                There are 10 types of people in the world —<br />
+                those that understand binary, and those that don't.
+            </p>
+            <font-awesome-icon icon="fa-solid fa-quote-right" class="quote-icon quote-icon--right" />
+        </div>
     </div>
 </template>
 
@@ -86,309 +85,293 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
-.skills {
-    background-color: rgba(120, 113, 108, 0.5);
-    border-radius: 5px;
-    font-size: 25px;
-    text-align: center;
-}
-
-#parallax-one {
-    background-image: url('../assets/img/bg1.jpg');
-    background-repeat: no-repeat;
-}
-#para-one-sub {
-    background-image: url('../assets/img/bg1-mobile.jpg');
-    background-position: center;
+/* ── Hero ── */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px 40px;
 }
 
-#parallax-two {
-    background-image: url('../assets/img/bg2.png');
-    background-repeat: no-repeat;
-}
-#para-two-sub {
-    background-image: url('../assets/img/bg2-mobile.jpg');
-    background-position: center;
+#hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 48px 56px;
+    max-width: 860px;
+    width: 100%;
 }
 
-#parallax-three {
-    background-image: url('../assets/img/bg3.jpg');
-    background-repeat: no-repeat;
+.hero-photo {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: translateZ(0);
+    will-change: transform;
 }
-#para-three-sub {
-    background-image: url('../assets/img/bg3-mobile.jpg');
-    background-position: center;
+
+#hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
+
+#hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+#hero-title {
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    color: rgb(120, 113, 108);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+#hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 300;
+    margin-top: 4px;
+}
+
+#hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.04em;
+}
+
+.hero-btn--primary {
+    background: rgba(120, 113, 108, 0.35);
+    border: 1px solid rgba(120, 113, 108, 0.6);
+    color: white;
+}
+
+.hero-btn--primary:hover {
+    background: rgba(120, 113, 108, 0.55);
+    border-color: rgba(120, 113, 108, 0.9);
+    transform: translateY(-2px);
+}
+
+.hero-btn--secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ── Parallax ── */
+#parallax-one  { background-image: url('../assets/img/bg1.jpg'); }
+#parallax-two  { background-image: url('../assets/img/bg2.png'); }
+#parallax-three { background-image: url('../assets/img/bg3.jpg'); }
 
 .parallax {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-height: 200px;
+    background-repeat: no-repeat;
+    min-height: 260px;
 }
+
+#para-one-sub   { background-image: url('../assets/img/bg1-mobile.jpg'); background-position: center; }
+#para-two-sub   { background-image: url('../assets/img/bg2-mobile.jpg'); background-position: center; }
+#para-three-sub { background-image: url('../assets/img/bg3-mobile.jpg'); background-position: center; }
+
 .para-sub {
     background-size: cover;
     min-height: 200px;
 }
 
-
-#pic-title {
-    padding: 30px 20px;
-    height: 100vh;
-    min-height: 600px;
-}
-
-.picture {
-    border-radius: 5px 0px 0px 5px; /* tl tr br bl (clockwise) */
-    display: block;
-    margin: 0 auto;
-    height: 300px;
-    min-width: 225px;
-}
-
-.title {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Playfair', serif;
-    padding: 20px 5px;
-    letter-spacing: 5px;
-}
-
-#name {
-    font-size: 60px;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-#about-me {
-    padding: 10px;
-    font-size: 20px;
-}
-
-.projects-div {
-    height: 100vh;
+/* ── CTA sections ── */
+.cta-section {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 60px 24px;
 }
 
-.proj-title {
-    font-size: 60px;
-    text-align: left;
+.cta-section--right {
+    justify-content: flex-end;
 }
 
-.proj-sub-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(120 113 108);
-    padding: 10px;
-    font-size: 30px;
-    height: 65px;
+.cta-inner {
+    max-width: 480px;
+    padding-left: clamp(24px, 10vw, 120px);
 }
 
-.resume-div {
-    height: 100vh;
-    font-size: 60px;
-}
-
-.resume-wrapper {
+.cta-inner--right {
+    padding-left: 0;
+    padding-right: clamp(24px, 10vw, 120px);
     text-align: right;
 }
 
-.resume-link {
-    display: inline-block;
-    text-align: right;
-    background-color: rgb(120 113 108);
-    padding: 10px;
-    white-space: nowrap;
-    font-size: 30px;
-    height: 65px;
+.cta-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(120, 113, 108);
+    margin-bottom: 8px;
 }
 
-.arrow {
-    margin-left: 50px;
-    font-size: 25px;
+.cta-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 16px;
 }
 
+.cta-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background: rgba(120, 113, 108, 0.2);
+    border: 1px solid rgba(120, 113, 108, 0.4);
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.cta-link:hover {
+    background: rgba(120, 113, 108, 0.4);
+    border-color: rgba(120, 113, 108, 0.7);
+    transform: translateX(4px);
+}
+
+.cta-inner--right .cta-link:hover {
+    transform: translateX(-4px);
+}
+
+.cta-arrow {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+}
+
+.cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+/* ── Quote ── */
 #quote {
-    background-color: rgb(31, 41, 55);
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 25px;
-    padding: 50px;
+    gap: 20px;
+    padding: 80px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-#quote-left,
-#quote-right {
-    font-size: 40px;
-    margin: 10px;
+#quote-text {
+    font-size: clamp(16px, 2vw, 22px);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.65);
+    text-align: center;
+    line-height: 1.7;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
 }
 
-@media screen and (min-width: 1021px) {
-    #title-bg {
-        background-color: rgba(120, 113, 108, 0.5);
-        border-radius: 0px 10px 10px 0px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        padding: 0 100px;
-    }
-
-    .title {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-
-    #pic-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .proj-wrapper {
-        padding-left: calc(10vw);
-    }
-
-    .resume-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: end;
-        padding-right: calc(10vw);
-    }
+.quote-icon {
+    font-size: 32px;
+    color: rgba(120, 113, 108, 0.5);
+    flex-shrink: 0;
 }
 
-@media screen and (801px <= width <= 1020px) {
-    .title {
-        padding: 0;
-    }
+.quote-icon--left { align-self: flex-start; }
+.quote-icon--right { align-self: flex-end; }
 
-    .picture {
-        height: 300px;
-        width: 225px;
-        border-radius: 5px;
-    }
-
-    .proj-wrapper {
-        padding-left: calc(10vw);
-    }
-
-    .resume-wrapper {
-        padding-right: calc(10vw);
-    }
-
-    .resume-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: end;
-        padding-right: calc(10vw);
-    }
-}
-
+/* ── Responsive ── */
 @media screen and (max-width: 800px) {
-    #name {
-        font-size: 40px;
-    }
-
-    .title {
-        font-size: 32px;
-    }
-
-    .projects-div {
-        justify-content: center;
-    }
-    .proj-wrapper {
-        display: flex;
+    #hero-content {
         flex-direction: column;
-    }
-    .proj-title {
-        font-size: 50px;
-        text-align: center;
-    }
-    .proj-sub-text {
-        font-size: 20px;
-    }
-    .arrow {
-        margin-left: 50px;
-    }
-
-    .resume-div {
-        font-size: 35px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-    }
-
-    .resume-wrapper {
-        padding: 10px;
         text-align: center;
-    }
-    
-    .resume-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(120 113 108);
-        padding: 10px;
-        font-size: 30px;
-        height: 65px;
+        padding: 36px 28px;
+        gap: 28px;
     }
 
-    .picture {
-        border-radius: 5px;
-        height: 225px;
-        min-width: 168.75px;
-        margin: 0 auto;
-    }
-
-    #quote {
-        padding: 10px;
-        color: white;
-        text-align: center;
-        font-size: 25px;
-        display: flex;
-        align-items: center;
+    .hero-photo {
+        width: 160px;
         height: 200px;
     }
 
-    #quote-left {
-        font-size: 40px;
-        display: flex;
-        align-self: start;
-        margin-top: 10px;
+    #hero-actions {
+        justify-content: center;
     }
 
-    #quote-right {
-        font-size: 40px;
-        display: flex;
-        align-self: end;
-        margin-bottom: 10px;
+    .cta-section--right {
+        justify-content: center;
     }
-}
 
-@media screen and (max-width: 454px) {
-    #quote-left,
-    #quote-right {
-        font-size: 20px;
-        padding: 0;
-        margin: 0;
+    .cta-inner--right {
+        padding-right: 0;
+        padding-left: clamp(16px, 8vw, 80px);
+        text-align: left;
     }
 
     #quote {
-        font-size: 20px;
+        padding: 48px 20px;
+        gap: 12px;
+    }
+
+    .quote-icon {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cta-inner {
+        padding-left: 16px;
     }
 }
 </style>

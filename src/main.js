@@ -14,6 +14,22 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
+// Scroll-triggered animation directive
+Vue.directive('animate', {
+  inserted(el, binding) {
+    const delay = binding.value || 0;
+    el.style.transitionDelay = delay + 'ms';
+    el.classList.add('animate-hidden');
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add('animate-visible');
+        observer.disconnect();
+      }
+    }, { threshold: 0.12 });
+    observer.observe(el);
+  }
+});
+
 new Vue({
   router,
   render: h => h(App),
