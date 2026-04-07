@@ -12,7 +12,6 @@
 
                 <div class="nav-right">
                     <RouterLink to="/contactme" class="contact-btn" active-class="contact-btn--active">Contact Me</RouterLink>
-
                     <a class="social-link" href="https://www.linkedin.com/in/connorfrendt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <font-awesome-icon icon="fa-brands fa-linkedin" />
                     </a>
@@ -24,61 +23,77 @@
         </nav>
 
         <!--Mobile Header-->
-        <div class="mobile-header md:hidden fixed top-0 w-full z-10" ref="mobileHeader">
+        <div class="md:hidden fixed top-0 w-full z-20">
+            <!-- Top bar -->
             <div class="mobile-bar">
-                <button @click="open = !open" class="mobile-toggle" aria-label="Toggle menu">
-                    <font-awesome-icon icon="fa-solid fa-bars" />
-                    <font-awesome-icon :icon="open ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'" class="ml-2" />
+                <span class="mobile-bar-name">Connor Frendt</span>
+                <button @click="open = !open" class="mobile-toggle" :aria-label="open ? 'Close menu' : 'Open menu'">
+                    <transition name="icon-swap" mode="out-in">
+                        <font-awesome-icon v-if="!open" key="bars" icon="fa-solid fa-bars" />
+                        <font-awesome-icon v-else key="x" icon="fa-solid fa-xmark" />
+                    </transition>
                 </button>
             </div>
+        </div>
 
-            <transition name="menu-slide">
-                <div v-if="open" class="mobile-menu">
-                    <RouterLink to="/" exact-active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Home</RouterLink>
-                    <RouterLink to="/resume" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Resume</RouterLink>
-                    <RouterLink to="/projects" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Projects</RouterLink>
-                    <RouterLink to="/aboutme" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">About Me</RouterLink>
-                    <RouterLink to="/contactme" active-class="mobile-link--active" @click.native="open = false" class="mobile-link">Contact Me</RouterLink>
+        <!-- Full-screen overlay -->
+        <transition name="overlay">
+            <div v-if="open" class="mobile-overlay md:hidden" @click.self="open = false">
+                <nav class="mobile-overlay-nav">
+                    <RouterLink to="/" exact-active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                        Home
+                    </RouterLink>
+                    <RouterLink to="/resume" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                        Resume
+                    </RouterLink>
+                    <RouterLink to="/projects" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                        Projects
+                    </RouterLink>
+                    <RouterLink to="/aboutme" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                        About Me
+                    </RouterLink>
+                    <RouterLink to="/contactme" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                        Contact Me
+                    </RouterLink>
 
-                    <div class="mobile-socials">
-                        <a class="social-link" href="https://www.linkedin.com/in/connorfrendt" target="_blank" rel="noopener noreferrer">
+                    <div class="overlay-socials">
+                        <a class="overlay-social" href="https://www.linkedin.com/in/connorfrendt" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon icon="fa-brands fa-linkedin" />
                         </a>
-                        <a class="social-link" href="https://www.github.com/connorfrendt" target="_blank" rel="noopener noreferrer">
+                        <a class="overlay-social" href="https://www.github.com/connorfrendt" target="_blank" rel="noopener noreferrer">
                             <font-awesome-icon icon="fa-brands fa-github" />
                         </a>
                     </div>
-                </div>
-            </transition>
-        </div>
+                </nav>
+            </div>
+        </transition>
     </div>
 </template>
 
 <script>
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+library.add(faXmark);
+
 export default {
     data() {
         return {
             open: false,
         }
     },
-    mounted() {
-        document.addEventListener('click', this.handleDocumentClick);
+    watch: {
+        open(val) {
+            document.body.style.overflow = val ? 'hidden' : '';
+        }
     },
     beforeDestroy() {
-        document.removeEventListener('click', this.handleDocumentClick);
-    },
-    methods: {
-        handleDocumentClick(event) {
-            const mobileHeader = this.$refs.mobileHeader;
-            if (this.open && mobileHeader && !mobileHeader.contains(event.target)) {
-                this.open = false;
-            }
-        }
+        document.body.style.overflow = '';
     }
 }
 </script>
 
 <style scoped>
+/* ── Desktop nav ── */
 .header-nav {
     background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(16px);
@@ -173,81 +188,138 @@ export default {
     background: rgba(255, 255, 255, 0.07);
 }
 
-/* Mobile */
-.mobile-header {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-}
-
+/* ── Mobile top bar ── */
 .mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 56px;
     background: rgba(17, 24, 39, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
+.mobile-bar-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.04em;
+}
+
 .mobile-toggle {
-    width: 100%;
-    padding: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
-    background: none;
-    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 30;
+    position: relative;
 }
 
 .mobile-toggle:hover {
     color: white;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.mobile-menu {
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    padding: 8px 16px 16px;
+/* ── Full-screen overlay ── */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    background: rgba(10, 15, 25, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-overlay-nav {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0 32px;
 }
 
-.mobile-link {
+.overlay-link {
     display: block;
-    color: rgba(255, 255, 255, 0.65);
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 10px 14px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    padding: 14px 0;
+    border-radius: 12px;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
-.mobile-link:hover {
+.overlay-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.overlay-link--active {
+    color: white !important;
+    background: rgba(120, 113, 108, 0.15) !important;
+}
+
+.overlay-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    width: 100%;
+    justify-content: center;
+}
+
+.overlay-social {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 26px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.overlay-social:hover {
     color: white;
     background: rgba(255, 255, 255, 0.07);
 }
 
-.mobile-link--active {
-    color: white !important;
-    background: rgba(120, 113, 108, 0.2) !important;
+/* ── Transitions ── */
+.overlay-enter-active,
+.overlay-leave-active {
+    transition: opacity 0.3s ease;
 }
-
-.mobile-socials {
-    display: flex;
-    gap: 4px;
-    padding: 8px 4px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 8px;
-}
-
-/* Menu slide transition */
-.menu-slide-enter-active,
-.menu-slide-leave-active {
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.menu-slide-enter,
-.menu-slide-leave-to {
+.overlay-enter,
+.overlay-leave-to {
     opacity: 0;
-    transform: translateY(-8px);
+}
+
+.icon-swap-enter-active,
+.icon-swap-leave-active {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.icon-swap-enter {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.7);
+}
+.icon-swap-leave-to {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.7);
 }
 </style>
