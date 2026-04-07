@@ -16,9 +16,7 @@
             </div>
         </div>
 
-        <!-- Parallax 1 -->
-        <div id="parallax-one" class="parallax" v-if="desktop"></div>
-        <div id="para-one-sub" class="para-sub" v-if="mobile"></div>
+        <!-- <div id="parallax-one" class="parallax-img"></div> -->
 
         <!-- Projects CTA -->
         <div class="cta-section">
@@ -33,9 +31,7 @@
             </div>
         </div>
 
-        <!-- Parallax 2 -->
-        <div id="parallax-two" class="parallax" v-if="desktop"></div>
-        <div id="para-two-sub" class="para-sub" v-if="mobile"></div>
+        <!-- <div id="parallax-two" class="parallax-img"></div> -->
 
         <!-- Resume CTA -->
         <div class="cta-section cta-section--right">
@@ -50,9 +46,7 @@
             </div>
         </div>
 
-        <!-- Parallax 3 -->
-        <div id="parallax-three" class="parallax" v-if="desktop"></div>
-        <div id="para-three-sub" class="para-sub" v-if="mobile"></div>
+        <!-- <div id="parallax-three" class="parallax-img"></div> -->
 
         <!-- Quote -->
         <div id="quote" v-animate>
@@ -68,19 +62,6 @@
 
 <script>
 export default {
-    data() {
-        return {
-            width: window.innerWidth
-        }
-    },
-    computed: {
-        desktop() {
-            return this.width > 800;
-        },
-        mobile() {
-            return this.width <= 800;
-        }
-    }
 }
 </script>
 
@@ -115,15 +96,6 @@ export default {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     flex-shrink: 0;
 }
-/*
-.about-photo {
-    width: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
-}
-*/
 
 #hero-text {
     display: flex;
@@ -197,26 +169,16 @@ export default {
     transform: translateY(-2px);
 }
 
-/* ── Parallax ── */
-#parallax-one  { background-image: url('../assets/img/bg1.jpg'); }
-#parallax-two  { background-image: url('../assets/img/bg2.png'); }
+/* ── Section images ── */
+#parallax-one   { background-image: url('../assets/img/bg1.jpg'); }
+#parallax-two   { background-image: url('../assets/img/bg2.png'); }
 #parallax-three { background-image: url('../assets/img/bg3.jpg'); }
 
-.parallax {
-    background-attachment: fixed;
+.parallax-img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 260px;
-}
-
-#para-one-sub   { background-image: url('../assets/img/bg1-mobile.jpg'); background-position: center; }
-#para-two-sub   { background-image: url('../assets/img/bg2-mobile.jpg'); background-position: center; }
-#para-three-sub { background-image: url('../assets/img/bg3-mobile.jpg'); background-position: center; }
-
-.para-sub {
-    background-size: cover;
-    min-height: 200px;
 }
 
 /* ── CTA sections ── */
@@ -346,7 +308,6 @@ export default {
 
     .hero-photo {
         width: 160px;
-        height: 200px;
     }
 
     #hero-actions {
