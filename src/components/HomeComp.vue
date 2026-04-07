@@ -109,12 +109,21 @@ export default {
 }
 
 .hero-photo {
-    width: 220px;
+    width: 160px;
     object-fit: cover;
     border-radius: 12px;
-    flex-shrink: 0;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
 }
+/*
+.about-photo {
+    width: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+*/
 
 #hero-text {
     display: flex;

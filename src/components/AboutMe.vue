@@ -40,12 +40,6 @@
 
         <!-- Patterns -->
         <div class="about-split about-split--reverse" v-animate>
-            <div class="about-split-body">
-                I could jump into the deep end of a language I've never touched, figure out how it works, break it,
-                fix it, and build on it — because every language and application follows some sort of pattern.
-                I once jumped into a JavaScript project with zero JS knowledge, poked around, and fixed a broken
-                piece because I understood the pattern — all in a language I didn't know yet.
-            </div>
             <div class="about-split-label glass">
                 <span class="split-eyebrow">Learning style</span>
                 <div class="split-heading">
@@ -54,6 +48,13 @@
                     <span class="split-heading--dimmer">patterns…</span>
                 </div>
             </div>
+            <div class="about-split-body">
+                I could jump into the deep end of a language I've never touched, figure out how it works, break it,
+                fix it, and build on it — because every language and application follows some sort of pattern.
+                I once jumped into a JavaScript project with zero JS knowledge, poked around, and fixed a broken
+                piece because I understood the pattern — all in a language I didn't know yet.
+            </div>
+            
         </div>
 
         <!-- Hobbies -->
