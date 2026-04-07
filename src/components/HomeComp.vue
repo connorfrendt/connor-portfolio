@@ -100,9 +100,7 @@ export default {
     display: flex;
     align-items: center;
     gap: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 48px 56px;
@@ -117,8 +115,6 @@ export default {
     border-radius: 12px;
     flex-shrink: 0;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    transform: translateZ(0);
-    will-change: transform;
 }
 
 #hero-text {

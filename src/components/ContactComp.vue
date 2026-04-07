@@ -166,6 +166,7 @@ export default {
 
 .contact-link-body {
     flex: 1;
+    min-width: 0;
 }
 
 .contact-link-label {
@@ -181,12 +182,16 @@ export default {
     font-size: 15px;
     font-weight: 400;
     color: rgba(255,255,255,0.75);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .contact-link-arrow {
     font-size: 14px;
     color: rgba(255,255,255,0.25);
     transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
 }
 
 .contact-link:hover .contact-link-arrow {

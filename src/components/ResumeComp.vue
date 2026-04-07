@@ -85,12 +85,21 @@ export default {
         return {
             experience: [
                 {
+                    id: 8,
+                    title: 'Web Developer',
+                    type: 'Contract',
+                    company: 'The Hough Foundation',
+                    place: 'Fully Remote',
+                    duration: 'March 2026 – Present',
+                    description: 'Leading the modernization of a legacy website by migrating to Vue.js, enhancing performance, scalability, and UX.'
+                },
+                {
                     id: 7,
                     title: 'Full Stack Developer',
                     type: 'Part Time',
                     company: 'DESI Telephone Labels',
                     place: 'Fully Remote',
-                    duration: 'Oct 2024 – Present',
+                    duration: 'Oct 2024 – Oct 2025',
                     description: 'Developed a web application to transition the company\'s Windows-only software to cross-platform access. Implemented user authentication via a custom-built API and extension-based phone label customization. Created a user-friendly printing system that generates PDFs through RESTful APIs.'
                 },
                 {
@@ -99,7 +108,7 @@ export default {
                     type: 'Part Time Contract',
                     company: 'Open Function Computers',
                     place: 'Fully Remote',
-                    duration: 'Sep 2024 – Present',
+                    duration: 'Sep 2024 – Oct 2025',
                     description: 'Improved and maintained the KinderCare website, optimizing UX and functionality using JavaScript and PHP.'
                 },
                 {
