@@ -16,10 +16,10 @@
             </div>
         </div>
 
-        <!-- <div id="parallax-one" class="parallax-img"></div> -->
+        <div class="section-divider"><span class="section-divider-dot"></span></div>
 
         <!-- Projects CTA -->
-        <div class="cta-section">
+        <div class="cta-section cta-section--tinted">
             <div class="cta-inner" v-animate>
                 <div class="cta-label">Explore</div>
                 <div class="cta-heading">Projects</div>
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- <div id="parallax-two" class="parallax-img"></div> -->
+        <div class="section-divider"><span class="section-divider-dot"></span></div>
 
         <!-- Resume CTA -->
         <div class="cta-section cta-section--right">
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <!-- <div id="parallax-three" class="parallax-img"></div> -->
+        <div class="section-divider"><span class="section-divider-dot"></span></div>
 
         <!-- Quote -->
         <div id="quote" v-animate>
@@ -181,12 +181,47 @@ export default {
     min-height: 260px;
 }
 
+/* ── Dividers ── */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    gap: 0;
+    position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(120, 113, 108, 0.35));
+}
+
+.section-divider::after {
+    background: linear-gradient(to left, transparent, rgba(120, 113, 108, 0.35));
+}
+
+.section-divider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(120, 113, 108, 0.6);
+    margin: 0 16px;
+    flex-shrink: 0;
+}
+
 /* ── CTA sections ── */
 .cta-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 60px 24px;
+}
+
+.cta-section--tinted {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .cta-section--right {
