@@ -4,7 +4,11 @@
         <!-- Intro block -->
         <div class="about-hero" v-animate>
             <div class="about-hero-badge glass-warm">
-                Full Stack JavaScript Developer
+                Full Stack JavaScript
+                <div class="line-through">Duveloper</div>
+                <div class="line-through">Developr</div>
+                <div class="line-through">Develupr</div>
+                <div>I'm good at making stuff</div>
             </div>
             <p class="about-bio">
                 After graduating with a B.S. in Mathematics, I eagerly plunged in head first into the tech world.
@@ -143,7 +147,7 @@ export default {
 .about-hero-badge {
     display: inline-block;
     padding: 8px 20px;
-    border-radius: 100px;
+    border-radius: 14px;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.08em;
