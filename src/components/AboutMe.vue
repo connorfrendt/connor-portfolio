@@ -3,12 +3,15 @@
 
         <!-- Intro block -->
         <div class="about-hero" v-animate>
-            <div class="about-hero-badge glass-warm">
-                Full Stack JavaScript
-                <div class="line-through">Duveloper</div>
-                <div class="line-through">Developr</div>
-                <div class="line-through">Develupr</div>
-                <div>I'm good at making stuff</div>
+            <div class="about-hero-top glass">
+                <img src="../assets/img/pfp.jpg" class="about-photo" alt="Connor Frendt" />
+                <div class="about-hero-badge">
+                    Full Stack JavaScript
+                    <div class="line-through">Duveloper</div>
+                    <div class="line-through">Developr</div>
+                    <div class="line-through">Develupr</div>
+                    <div>I'm good at making stuff</div>
+                </div>
             </div>
             <p class="about-bio">
                 After graduating with a B.S. in Mathematics, I eagerly plunged in head first into the tech world.
@@ -140,18 +143,45 @@ export default {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 28px;
     padding: 60px 0 80px;
 }
 
+.about-hero-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-radius: 20px;
+    padding: 40px 48px;
+}
+
+.about-photo {
+    width: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
 .about-hero-badge {
-    display: inline-block;
-    padding: 8px 20px;
+    padding: 20px 28px;
     border-radius: 14px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .about-hero-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-hero-badge {
+        text-align: center;
+    }
 }
 
 .about-bio {

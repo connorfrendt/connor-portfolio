@@ -110,7 +110,6 @@ export default {
 
 .hero-photo {
     width: 220px;
-    height: 280px;
     object-fit: cover;
     border-radius: 12px;
     flex-shrink: 0;
