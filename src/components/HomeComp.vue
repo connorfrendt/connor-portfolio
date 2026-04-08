@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <div class="section-divider"><span class="section-divider-dot"></span></div>
+        <!-- <div class="section-divider"><span class="section-divider-dot"></span></div> -->
 
         <!-- Quote -->
         <div id="quote" v-animate>

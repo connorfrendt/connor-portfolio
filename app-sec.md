@@ -20,29 +20,31 @@ There is no user input. The contact page displays static links only (email, Link
 
 ## External Links
 
-All external links (`linkedin.com`, `github.com`) use `target="_blank"`. These should include `rel="noopener noreferrer"` to prevent reverse tabnapping.
+All external links (`linkedin.com`, `github.com`) now include `rel="noopener noreferrer"` across all components (`HeaderComp`, `ProjectsComp`, `ContactComp`). Reverse tabnapping risk is resolved.
 
-**Action item:** Audit `<a target="_blank">` tags and add `rel="noopener noreferrer"` where missing.
+## External Resources
+
+Google Fonts (`fonts.googleapis.com`) is loaded via `@import` in component styles. This is a third-party network request. If a strict CSP is added, `fonts.googleapis.com` and `fonts.gstatic.com` must be allowlisted.
 
 ## Dependencies
 
 | Concern | Detail |
 |---|---|
 | Vue 2 | EOL as of December 2023 — no further security patches. Migration to Vue 3 is recommended. |
-| jsPDF | Used client-side only for resume generation; no network calls. |
+| jsPDF | Imported but currently commented out — not active. |
 | FontAwesome | SVG icons loaded from npm, not a CDN — no third-party script execution risk. |
 
 Run `npm audit` periodically to catch known CVEs in the dependency tree.
 
 ## Content Security Policy (CSP)
 
-No explicit CSP headers are currently configured in `netlify.toml`. A restrictive policy is recommended:
+No explicit CSP headers are currently configured in `netlify.toml`. A restrictive policy is recommended. Note that Google Fonts must be included:
 
 ```toml
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; script-src 'self'"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; script-src 'self'"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
@@ -53,7 +55,8 @@ No explicit CSP headers are currently configured in `netlify.toml`. A restrictiv
 | Risk | Severity | Status |
 |---|---|---|
 | Vue 2 EOL | Medium | Open |
-| Missing `rel="noopener noreferrer"` on external links | Low | Open |
+| Missing `rel="noopener noreferrer"` on external links | Low | Resolved |
 | No CSP headers | Low | Open |
+| Google Fonts external request not covered by CSP | Low | Open (blocked by no CSP) |
 | No user data exposure | N/A | Not applicable |
 | No auth/secrets in codebase | N/A | Verified |
