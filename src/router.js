@@ -3,7 +3,7 @@ import HomeComp from './components/HomeComp.vue';
 import ResumeComp from './components/ResumeComp.vue';
 import ProjectsComp from './components/ProjectsComp.vue';
 import ContactComp from './components/ContactComp.vue';
-import AboutMe from './components/AboutMe.vue';
+// import AboutMe from './components/AboutMe.vue';
 import Vue from 'vue';
 
 Vue.use(VueRouter);
@@ -15,7 +15,7 @@ export default new VueRouter ({
         { path: '/resume', component: ResumeComp },
         { path: '/projects', component: ProjectsComp },
         { path: '/contactme', component: ContactComp },
-        { path: '/aboutme', component: AboutMe },
+        // { path: '/aboutme', component: AboutMe },
         { path: '*', redirect: '/' },
     ],
     scrollBehavior(to, from, savedPosition) {

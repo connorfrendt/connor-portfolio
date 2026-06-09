@@ -7,7 +7,7 @@
                     <RouterLink to="/" class="nav-link" exact-active-class="nav-link--active">Home</RouterLink>
                     <RouterLink to="/resume" class="nav-link" active-class="nav-link--active">Resume</RouterLink>
                     <RouterLink to="/projects" class="nav-link" active-class="nav-link--active">Projects</RouterLink>
-                    <RouterLink to="/aboutme" class="nav-link" active-class="nav-link--active">About Me</RouterLink>
+                    <!-- <RouterLink to="/aboutme" class="nav-link" active-class="nav-link--active">About Me</RouterLink> -->
                 </div>
 
                 <div class="nav-right">
@@ -49,9 +49,9 @@
                     <RouterLink to="/projects" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
                         Projects
                     </RouterLink>
-                    <RouterLink to="/aboutme" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
+                    <!-- <RouterLink to="/aboutme" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
                         About Me
-                    </RouterLink>
+                    </RouterLink> -->
                     <RouterLink to="/contactme" active-class="overlay-link--active" @click.native="open = false" class="overlay-link">
                         Contact Me
                     </RouterLink>
