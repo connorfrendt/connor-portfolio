@@ -3,11 +3,11 @@
         <!-- Hero -->
         <div id="hero">
             <div id="hero-content" v-animate>
-                <img src="../assets/img/pfp.jpg" class="hero-photo" alt="Connor Frendt" />
+                <img src="../assets/img/cfpfp_professional.jpg" class="hero-photo" alt="Connor Frendt" />
                 <div id="hero-text">
                     <div id="hero-name">Connor Frendt</div>
                     <div id="hero-title">Full Stack JavaScript Developer</div>
-                    <div id="hero-sub">Building clean, performant web experiences.</div>
+                    <div id="hero-sub">Full stack developer with professional experience delivering <span class="">end-to-end web applications</span>, from <span class="">modernizing legacy systems</span> to <span class="">building custom tools, internal platforms, and client-facing applications</span>. I help businesses and teams turn complex, real-world problems into software that actually works, whether that's untangling an outdated codebase or building something new from scratch. With a <span class="stand-out">mathematics degree</span> and an expanding background in <span class="stand-out">cybersecurity and application security</span>, I don't just build things. I think carefully about how they're structured, why they might break, and <span class="">how to make them better.</span></div>
                     <div id="hero-actions">
                         <RouterLink to="/projects" class="hero-btn hero-btn--primary">View Projects</RouterLink>
                         <RouterLink to="/resume" class="hero-btn hero-btn--secondary">Résumé</RouterLink>
@@ -90,7 +90,7 @@ export default {
 }
 
 .hero-photo {
-    width: 160px;
+    width: 200px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -123,8 +123,12 @@ export default {
 #hero-sub {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.45);
-    font-weight: 300;
+    /* font-weight: 300; */
     margin-top: 4px;
+}
+
+.stand-out {
+    color: white;
 }
 
 #hero-actions {

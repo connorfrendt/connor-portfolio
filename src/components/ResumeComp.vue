@@ -15,14 +15,23 @@
                     v-animate
                     :data-animate-delay="index * 80"
                 >
-                    <div class="timeline-meta">
+                    <!-- <div class="timeline-meta">
                         <span class="timeline-duration">{{ job.duration }}</span>
                         <span class="timeline-type">{{ job.type }}</span>
-                    </div>
+                    </div> -->
                     <div class="timeline-body">
                         <div class="timeline-title">{{ job.title }}</div>
                         <div class="timeline-company">{{ job.company }} &mdash; {{ job.place }}</div>
-                        <p class="timeline-desc">{{ job.description }}</p>
+                        <ul class="timeline-descs">
+                            <li
+                                v-for="desc in job.descriptions"
+                                :key="desc.id"
+                                class="timeline-desc"
+                            >
+                                {{ desc.description }}
+                                <hr />
+                            </li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -85,52 +94,72 @@ export default {
         return {
             experience: [
                 {
-                    id: 8,
+                    id: 'hough',
                     title: 'Web Developer',
                     type: 'Contract',
                     company: 'The Hough Foundation',
                     place: 'Fully Remote',
                     duration: 'March 2026 – Present',
-                    description: 'Leading the modernization of a legacy website by migrating to Vue.js, enhancing performance, scalability, and UX.'
+                    descriptions: [
+                        { id: 1, description: 'Leading the modernization of a legacy website by migrating to Vue.js, enhancing performance, scalability, and user experience.' },
+                        { id: 2, description: 'Rebuilding the site from scratch with a focus on streamlined navigation and accessibility, serving hundreds of users who rely on it for critical announcements, events, and program information.' },
+                        { id: 3, description: 'Responsible for full lifecycle development including architecture, implementation, design, and hosting of the production environment.' }
+                    ]
                 },
                 {
-                    id: 7,
+                    id: 'desi',
                     title: 'Full Stack Developer',
                     type: 'Part Time',
                     company: 'DESI Telephone Labels',
                     place: 'Fully Remote',
                     duration: 'Oct 2024 – Oct 2025',
-                    description: 'Developed a web application to transition the company\'s Windows-only software to cross-platform access. Implemented user authentication via a custom-built API and extension-based phone label customization. Created a user-friendly printing system that generates PDFs through RESTful APIs.'
+                    descriptions: [
+                        { id: 1, description: 'Architected a cross-platform web application using Vue.js and SQL that replaced legacy Windows-only desktop software, eliminating a platform dependency and expanding accessibility to all OS users' },
+                        { id: 2, description: 'Implemented secure user authentication and data storage using a backend-as-a-service platform, enforcing role-based permissions for multi-tenant user management.' },
+                        { id: 3, description: 'Built RESTful APIs to power a data pipeline for phone label customization, handling data ingestion, tranformation, storage, and retrieval, reducing manual data entry workflows.' },
+                        { id: 4, description: 'Engineered an automated PDF generation system integrated with the printing pipeline, streamlining a process that previously required manual document assembly.' },
+                    ]
                 },
                 {
-                    id: 6,
+                    id: 'ofc',
                     title: 'Full Stack Developer',
                     type: 'Part Time Contract',
                     company: 'Open Function Computers',
                     place: 'Fully Remote',
                     duration: 'Sep 2024 – Oct 2025',
-                    description: 'Improved and maintained the KinderCare website, optimizing UX and functionality using JavaScript and PHP.'
+                    descriptions: [
+                        { id: 1, description: 'Designed and built a dynamic, multi-tiered reporting system using Vue.js, PHP, HTML, and CSS that served 2,700+ KinderCare learning centers - each center, district, and regional page automatically populated with location-specific engagement data from a single reusable template.' },
+                        { id: 2, description: 'Architected 5 distinct page templates that scaled across every level of organization (center, district, region, and national) - allowing staff to drill into school-level performance metrics or zoom out to regional trends, all from the same codebase.' },
+                        { id: 3, description: 'Ensured pixel-perfect parity between the web application and the existing PDF report format, mapping dozens of dynamic data points to their correct locations so stakeholders could seamlessly move between digital and print formats.' },
+                    ]
                 },
                 {
-                    id: 5,
+                    id: 'bridge',
                     title: 'Frontend Developer',
                     type: 'Part Time',
                     company: 'Bridgesense',
                     place: 'Fully Remote',
                     duration: 'Dec 2022 – Feb 2023',
-                    description: 'Built 2 websites from the ground up for clients using HTML, TailwindCSS, Bootstrap, and Peek API.'
+                    descriptions: [
+                        { id: 1, description: 'Built 2 production client websites for catamaran tour companies in Cabo San Lucas using H TML and TailwindCSS - implementing multi-page navigation with custom dropdown menus, image gallery sliders, tour listing pages, and customer contact forms, integrated with PeekAPI for online tour booking and scheduling.' },
+                        { id: 2, description: 'Delivered both websites under significant time pressure with fully responsive designs and optimized for mobile and desktop, ensuring a seamless booking experience across all devices for customers purchasing tours ranging up to $1,275' }
+                    ]
                 },
                 {
-                    id: 4,
+                    id: 'nova',
                     title: 'Software Developer II',
                     type: 'Full Time',
                     company: 'Novacoast',
                     place: 'Fully Remote',
                     duration: 'May 2022 – Aug 2022',
-                    description: 'Learning and using TypeScript and Composition API within Vue to redesign the internal portal.'
+                    descriptions: [
+                        { id: 1, description: 'Self-taught TypeScript to migrate an internal security portal from JavaScript to TypeScript with Vue Composition API, improving type safety, reducing runtime errors, and enhancing long-term maintainability.' },
+                        { id: 2, description: 'Contributed to the UX redesign of the internal security portal, streamlining workflows, and implementing accessible design patterns for security operations teams.' },
+                        { id: 3, description: 'Assisted in implementing Kubernetes for container orchestration, improving deployment relilability, scalability, and infrastructure resilience for security-critical applications.' },
+                    ]
                 },
                 {
-                    id: 3,
+                    id: 'vet',
                     title: 'Administration Specialist',
                     type: 'Contract',
                     company: 'Vetsource',
@@ -139,46 +168,52 @@ export default {
                     description: 'Called 5–10 veterinary practices per day, maintained data in Salesforce, and sent documents via Salesforce and DocuSign.'
                 },
                 {
-                    id: 2,
+                    id: 'pollinate-2',
                     title: 'Database / Software Developer',
                     type: 'Full Time',
                     company: 'Pollinate',
                     place: 'Portland, OR',
                     duration: 'Dec 2019 – Aug 2020',
-                    description: 'Transitioned from Database Developer to Software Engineer. Assisted with projects for clients including Carhartt and Life is Good. Responsible for making data human-readable for front-end output across 100+ Under Armour garments per month.'
+                    descriptions: [
+                        { id: 1, description: 'Transition from Database Developer to Software Engineer and built a Vue.js application integrating 2 API endpoints to automate consumer image filtering, saving the company approximately $30,000/year in manual labor.' },
+                        { id: 2, description: 'Mentored 4 junior developers on Vue.js architecture and best practices, accelerating team delivery velocity across 3 concurrent projects.' },
+                        { id: 3, description: 'Executed complex SQL operations to manage and transform product data for 100+ Under Armour SKUs monthly, ensuring data integrity across the product catalog.' },
+                        { id: 4, description: 'Processed 100+ Jira tickets per month, refactoring BitBucket repositories to improve code quality, reduce technical debt, and making data human readable.' },
+                    ]
+                    // description: 'Transitioned from Database Developer to Software Engineer. Assisted with projects for clients including Carhartt and Life is Good. Responsible for making data human-readable for front-end output across 100+ Under Armour garments per month.'
                 },
-                {
-                    id: 1,
-                    title: 'Database Developer',
-                    type: 'Contract',
-                    company: 'Pollinate',
-                    place: 'Portland, OR',
-                    duration: 'Jun 2019 – Dec 2019',
-                    description: 'Learned the interrelations of all Pollinate databases, expanded SQL knowledge, and assisted with data for Under Armour garments.'
-                }
+                // {
+                //     id: 'pollinate-1',
+                //     title: 'Database Developer',
+                //     type: 'Contract',
+                //     company: 'Pollinate',
+                //     place: 'Portland, OR',
+                //     duration: 'Jun 2019 – Dec 2019',
+                //     description: 'Learned the interrelations of all Pollinate databases, expanded SQL knowledge, and assisted with data for Under Armour garments.'
+                // }
             ],
             techSkills: [
                 {
                     id: 'languages',
                     title: 'Languages',
                     names: [
-                        { id: 'html', skillName: 'HTML' },
-                        { id: 'css', skillName: 'CSS' },
                         { id: 'js', skillName: 'JavaScript' },
                         { id: 'python', skillName: 'Python' },
-                        { id: 'sql', skillName: 'SQL' }
+                        { id: 'sql', skillName: 'SQL' },
+                        { id: 'html', skillName: 'HTML 5' },
+                        { id: 'css', skillName: 'CSS 3' },
                     ]
                 },
                 {
                     id: 'front-end',
                     title: 'Front End',
                     names: [
-                        { id: 'vanillajs', skillName: 'VanillaJS' },
                         { id: 'vjs', skillName: 'VueJS' },
+                        { id: 'bootstrap', skillName: 'Bootstrap' },
+                        { id: 'tailwind', skillName: 'Tailwind CSS' },
+                        { id: 'vanillajs', skillName: 'VanillaJS' },
                         { id: 'grid', skillName: 'CSS Grid' },
                         { id: 'flex', skillName: 'CSS Flexbox' },
-                        { id: 'tailwind', skillName: 'Tailwind CSS' },
-                        { id: 'bootstrap', skillName: 'Bootstrap' },
                     ]
                 },
                 {
@@ -227,10 +262,10 @@ export default {
                     title: 'Other',
                     names: [
                         { id: 'api', skillName: 'RESTful APIs' },
-                        { id: 'rwb', skillName: 'Responsive Web Design' },
-                        { id: 'agile', skillName: 'Agile' },
                         { id: 'oauth', skillName: 'OAuth' },
+                        { id: 'rwb', skillName: 'Responsive Web Design' },
                         { id: 'jwt', skillName: 'JSON Web Token' },
+                        { id: 'agile', skillName: 'Agile' },
                     ]
                 },
                 {
@@ -316,7 +351,7 @@ export default {
 
 /* ── Timeline ── */
 .timeline {
-    list-style: none;
+    /* list-style: none; */
     padding: 0;
     margin: 0;
     display: flex;
@@ -325,8 +360,8 @@ export default {
 }
 
 .timeline-item {
-    display: grid;
-    grid-template-columns: 180px 1fr;
+    /* display: grid;
+    grid-template-columns: 180px 1fr; */
     gap: 0;
     border-radius: 14px;
     overflow: hidden;
@@ -383,12 +418,22 @@ export default {
     font-style: italic;
 }
 
-.timeline-desc {
+.timeline-descs {
     font-size: 14px;
     color: rgba(255,255,255,0.5);
     line-height: 1.7;
     margin: 0;
     font-weight: 300;
+}
+
+.timeline-desc {
+    padding: 10px 0;
+}
+
+hr {
+    border: none;
+    background-color: rgb(59, 59, 59);
+    height: 2px;
 }
 
 /* ── Skills grid ── */
@@ -421,7 +466,7 @@ export default {
 }
 
 .skill-list {
-    list-style: none;
+    /* list-style: none; */
     padding: 0;
     margin: 0;
     display: flex;
