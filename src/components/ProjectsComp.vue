@@ -13,7 +13,7 @@
                     :key="website.id"
                     class="project-card glass"
                     v-animate
-                    :data-animate-delay="index * 120"
+                    :data-animate-delay="index * 5"
                 >
                     <a :href="website.link" target="_blank" rel="noopener noreferrer" class="project-img-wrap">
                         <img :src="website.img" :alt="website.title" class="project-img" />
@@ -199,7 +199,7 @@ export default {
     border-radius: 16px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 370px 1fr;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -213,7 +213,7 @@ export default {
     position: relative;
     overflow: hidden;
     display: block;
-    aspect-ratio: 16 / 10;
+    /* aspect-ratio: 16 / 10; */
 }
 
 .project-img {
