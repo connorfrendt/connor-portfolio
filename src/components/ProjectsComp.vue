@@ -37,7 +37,7 @@
         </section>
 
         <!-- Personal Projects -->
-        <section class="projects-section" v-animate>
+        <!-- <section class="projects-section" v-animate>
             <div class="section-header">
                 <span class="section-eyebrow">Side work</span>
                 <h2 class="section-heading">Personal Projects</h2>
@@ -69,7 +69,7 @@
                     </div>
                 </li>
             </ul>
-        </section>
+        </section> -->
 
     </div>
 </template>
@@ -89,11 +89,11 @@ export default {
                     img: seaEstaImage,
                     title: 'Sea Esta Cabo',
                     link: "https://seaestacabo.com/",
-                    description: 'A luxury, private catamaran touring website, letting people book tours.',
+                    description: 'Implemented responsive image galleries, detailed tour listing pages for snorkeling, whale watching, and sunset experiences, and a seamless booking flow integrated with PeekAPI.',
                     tech: [
-                        { id: 'html', name: 'HTML' },
                         { id: 'css', name: 'TailwindCSS' },
-                        { id: 'peek', name: 'Peek API' }
+                        { id: 'peek', name: 'Peek API' },
+                        { id: 'html', name: 'HTML' },
                     ]
                 },
                 {
@@ -101,11 +101,11 @@ export default {
                     img: laGringaImage,
                     title: 'La Gringa Cabo',
                     link: "https://lagringacabo.com/",
-                    description: 'A powered catamaran tour, with whale watching, snorkeling, and sunset tours.',
+                    description: 'Implemented multi-page navigation with custom dropdown menus, tour listing pages, image galleries, and a customer contact form integrated with PeekAPI for real-time booking and scheduling.',
                     tech: [
-                        { id: 'html', name: 'HTML' },
                         { id: 'css', name: 'TailwindCSS' },
-                        { id: 'peek', name: 'Peek API' }
+                        { id: 'peek', name: 'Peek API' },
+                        { id: 'html', name: 'HTML' },
                     ]
                 }
             ],

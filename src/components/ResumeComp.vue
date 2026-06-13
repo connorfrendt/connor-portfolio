@@ -13,7 +13,7 @@
                     :key="job.id"
                     class="timeline-item glass"
                     v-animate
-                    :data-animate-delay="index * 80"
+                    :data-animate-delay="index * 5"
                 >
                     <!-- <div class="timeline-meta">
                         <span class="timeline-duration">{{ job.duration }}</span>
@@ -26,10 +26,9 @@
                             <li
                                 v-for="desc in job.descriptions"
                                 :key="desc.id"
-                                class="timeline-desc"
+                                class="timeline-desc standout"
                             >
                                 {{ desc.description }}
-                                <hr />
                             </li>
                         </ul>
                     </div>
@@ -49,7 +48,7 @@
                     :key="skill.id"
                     class="skill-card glass"
                     v-animate
-                    :data-animate-delay="index * 60"
+                    :data-animate-delay="index * 5"
                 >
                     <div class="skill-card-title">{{ skill.title }}</div>
                     <ul class="skill-list">
@@ -71,7 +70,7 @@
                     :key="school.id"
                     class="timeline-item glass"
                     v-animate
-                    :data-animate-delay="index * 80"
+                    :data-animate-delay="index * 5"
                 >
                     <div class="timeline-meta">
                         <span class="timeline-duration">{{ school.place }}</span>
@@ -116,7 +115,7 @@ export default {
                     descriptions: [
                         { id: 1, description: 'Architected a cross-platform web application using Vue.js and SQL that replaced legacy Windows-only desktop software, eliminating a platform dependency and expanding accessibility to all OS users' },
                         { id: 2, description: 'Implemented secure user authentication and data storage using a backend-as-a-service platform, enforcing role-based permissions for multi-tenant user management.' },
-                        { id: 3, description: 'Built RESTful APIs to power a data pipeline for phone label customization, handling data ingestion, tranformation, storage, and retrieval, reducing manual data entry workflows.' },
+                        { id: 3, description: 'Built RESTful APIs to power a data pipeline for phone label customization, handling data ingestion, transformation, storage, and retrieval, reducing manual data entry workflows.' },
                         { id: 4, description: 'Engineered an automated PDF generation system integrated with the printing pipeline, streamlining a process that previously required manual document assembly.' },
                     ]
                 },
@@ -141,7 +140,7 @@ export default {
                     place: 'Fully Remote',
                     duration: 'Dec 2022 – Feb 2023',
                     descriptions: [
-                        { id: 1, description: 'Built 2 production client websites for catamaran tour companies in Cabo San Lucas using H TML and TailwindCSS - implementing multi-page navigation with custom dropdown menus, image gallery sliders, tour listing pages, and customer contact forms, integrated with PeekAPI for online tour booking and scheduling.' },
+                        { id: 1, description: 'Built 2 production client websites for catamaran tour companies in Cabo San Lucas using HTML and TailwindCSS - implementing multi-page navigation with custom dropdown menus, image gallery sliders, tour listing pages, and customer contact forms, integrated with PeekAPI for online tour booking and scheduling.' },
                         { id: 2, description: 'Delivered both websites under significant time pressure with fully responsive designs and optimized for mobile and desktop, ensuring a seamless booking experience across all devices for customers purchasing tours ranging up to $1,275' }
                     ]
                 },
@@ -155,7 +154,7 @@ export default {
                     descriptions: [
                         { id: 1, description: 'Self-taught TypeScript to migrate an internal security portal from JavaScript to TypeScript with Vue Composition API, improving type safety, reducing runtime errors, and enhancing long-term maintainability.' },
                         { id: 2, description: 'Contributed to the UX redesign of the internal security portal, streamlining workflows, and implementing accessible design patterns for security operations teams.' },
-                        { id: 3, description: 'Assisted in implementing Kubernetes for container orchestration, improving deployment relilability, scalability, and infrastructure resilience for security-critical applications.' },
+                        { id: 3, description: 'Assisted in implementing Kubernetes for container orchestration, improving deployment reliability, scalability, and infrastructure resilience for security-critical applications.' },
                     ]
                 },
                 {
@@ -165,7 +164,11 @@ export default {
                     company: 'Vetsource',
                     place: 'Portland, OR',
                     duration: 'Oct 2021 – Dec 2021',
-                    description: 'Called 5–10 veterinary practices per day, maintained data in Salesforce, and sent documents via Salesforce and DocuSign.'
+                    descriptions: [
+                        { id: 1, description: 'Managed a high-priority client migration initiative for 150+ veterinary practices, contacting clinic staff and veterinarians directly to obtain legally required service agreement signatures as VetSource transitioned ownership of pharmacy distribution relationships from a competing provider.' },
+                        { id: 2, description: 'Maintained accurate, real-time records of 150+ accounts in Salesforce throughout a multi-touch outreach workflow - tracking call history, document delivery status, and follow-up cadences via DocuSign to ensure no clinic fell through the cracks during the transition.' },
+                    ]
+                    // description: 'Called 5–10 veterinary practices per day, maintained data in Salesforce, and sent documents via Salesforce and DocuSign.'
                 },
                 {
                     id: 'pollinate-2',
@@ -175,7 +178,7 @@ export default {
                     place: 'Portland, OR',
                     duration: 'Dec 2019 – Aug 2020',
                     descriptions: [
-                        { id: 1, description: 'Transition from Database Developer to Software Engineer and built a Vue.js application integrating 2 API endpoints to automate consumer image filtering, saving the company approximately $30,000/year in manual labor.' },
+                        { id: 1, description: 'Transitioned from Database Developer to Software Engineer and built a Vue.js application integrating 2 API endpoints to automate consumer image filtering, saving the company approximately $30,000/year in manual labor.' },
                         { id: 2, description: 'Mentored 4 junior developers on Vue.js architecture and best practices, accelerating team delivery velocity across 3 concurrent projects.' },
                         { id: 3, description: 'Executed complex SQL operations to manage and transform product data for 100+ Under Armour SKUs monthly, ensuring data integrity across the product catalog.' },
                         { id: 4, description: 'Processed 100+ Jira tickets per month, refactoring BitBucket repositories to improve code quality, reduce technical debt, and making data human readable.' },
@@ -307,6 +310,7 @@ export default {
         this.$nextTick(() => {
             this.$el.querySelectorAll('[data-animate-delay]').forEach(el => {
                 const delay = el.getAttribute('data-animate-delay');
+                console.log('DELAY: ', delay);
                 if (delay) el.style.transitionDelay = delay + 'ms';
             });
         });
@@ -351,7 +355,6 @@ export default {
 
 /* ── Timeline ── */
 .timeline {
-    /* list-style: none; */
     padding: 0;
     margin: 0;
     display: flex;
@@ -365,11 +368,13 @@ export default {
     gap: 0;
     border-radius: 14px;
     overflow: hidden;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, border-left 0.25s ease;
+    border-left: 4px solid transparent;
 }
 
 .timeline-item:hover {
     transform: translateX(4px);
+    border-left: 4px solid rgba(255, 255, 255, 0.25);
 }
 
 .timeline-meta {
@@ -430,11 +435,15 @@ export default {
     padding: 10px 0;
 }
 
-hr {
-    border: none;
-    background-color: rgb(59, 59, 59);
-    height: 2px;
+.standout {
+    background-color: rgba(120, 113, 108, 0.1);
+    /* border-left: 2px solid rgba(255, 255, 255, 0.5); */
+    /* border-left: 2px solid rgba(120, 113, 108, 0.35); */
+    border-radius: 10px;
+    margin: 15px 0;
+    padding: 15px;
 }
+
 
 /* ── Skills grid ── */
 .skills-grid {
